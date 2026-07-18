@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-ground: #000000;
+  --color-ivory: #ede6da;
+  --color-bronze: #b08d57;
+  --color-panel: #0f0f0f;
+  --font-display: var(--font-eczar);
+  --font-body: var(--font-grotesk);
+  --font-mono: var(--font-plex-mono);
+}
+
+::selection {
+  background: var(--color-ivory);
+  color: var(--color-ground);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background: var(--color-ground);
+  color: var(--color-ivory);
+  text-rendering: optimizeLegibility;
+}
+
+/* Film grain — pure CSS, one fixed overlay over everything */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+}
+
+/* Hero entrance — transform-only so the LCP heading is painted from the
+   first frame, and pure CSS so it never waits on hydration */
+@keyframes rise {
+  from {
+    transform: translateY(18px);
+  }
+  to {
+    transform: none;
+  }
+}
+
+.rise {
+  animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rise {
+    animation: none;
+  }
+}
+
+/* Scroll reveal — hidden state only applies once JS has marked the root,
+   so content is never invisible without JavaScript */
+html[data-js] .reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html[data-js] .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-js] .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+a,
+button {
+  outline-offset: 4px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-ivory);
+}
+
+/* Neutralise the browser autofill wash — keep the field transparent on the
+   black ground with ivory text instead of the default white/yellow fill */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-text-fill-color: var(--color-ivory);
+  -webkit-box-shadow: 0 0 0 1000px var(--color-ground) inset;
+  box-shadow: 0 0 0 1000px var(--color-ground) inset;
+  caret-color: var(--color-ivory);
+  transition: background-color 9999s ease-in-out 0s;
+}
