@@ -10,5 +10,8 @@ next-env.d.ts
 .env.local
 .env*.local
 
+# Production env IS committed: only NEXT_PUBLIC_* (browser-safe) values live here
+!.env.production
+
 # Claude Code local settings
 .claude/settings.local.json
