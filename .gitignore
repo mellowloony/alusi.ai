@@ -5,5 +5,10 @@ next-env.d.ts
 *.tsbuildinfo
 .DS_Store
 
+# Local env — real values live here; commit .env.example instead
+.env
+.env.local
+.env*.local
+
 # Claude Code local settings
 .claude/settings.local.json

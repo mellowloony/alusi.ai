@@ -1,11 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-
-/* TODO(waitlist): point this at your capture endpoint — a Formspree/Netlify
-   Forms URL, or a serverless function. While it is empty, the form validates
-   and confirms in-page but does NOT store the email anywhere. */
-const WAITLIST_ENDPOINT = "";
+import { createClient } from "../lib/supabase/client";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -25,14 +21,10 @@ export default function Waitlist() {
     }
     setStatus("submitting");
     try {
-      if (WAITLIST_ENDPOINT) {
-        const res = await fetch(WAITLIST_ENDPOINT, {
-          method: "POST",
-          headers: { "Content-Type": "application/json", Accept: "application/json" },
-          body: JSON.stringify({ email: value }),
-        });
-        if (!res.ok) throw new Error("Request failed");
-      }
+      const supabase = createClient();
+      const { error } = await supabase.from("waitlist").insert({ email: value });
+      // 23505 = unique violation: this email already joined. Treat as success.
+      if (error && error.code !== "23505") throw error;
       setStatus("success");
     } catch {
       setStatus("error");
