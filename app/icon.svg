@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <g fill="#EDE6DA" fill-rule="evenodd">
+    <!-- central spike (symmetric, tall + thin) -->
+    <path d="M256 46 L267 232 L256 250 L245 232 Z"/>
+    <!-- RIGHT side: face half (with eye) + horn -->
+    <g id="side">
+      <!-- mask face half + eye cut (evenodd) -->
+      <path d="M256 238
+               L300 172 L318 232
+               L332 298 L306 322 L320 342
+               L256 472 Z
+               M278 292 L314 279 L308 300 L284 307 Z"/>
+      <!-- right ram horn (thin, sharp tip) -->
+      <path d="M300 186
+               C 320 120 368 86 405 106
+               C 431 121 430 168 405 197
+               C 392 214 378 228 368 236
+               C 372 216 372 196 356 180
+               C 340 165 318 168 300 186 Z"/>
+    </g>
+    <use href="#side" transform="matrix(-1,0,0,1,512,0)"/>
+  </g>
+</svg>

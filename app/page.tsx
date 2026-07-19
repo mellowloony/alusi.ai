@@ -1,6 +1,7 @@
 import Nav from "../components/Nav";
 import UwaLaunch from "../components/UwaLaunch";
 import Cursor from "../components/Cursor";
+import VisitLogger from "../components/VisitLogger";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
           className="h-[92vh] w-auto opacity-[0.3]"
         />
       </div>
+      <VisitLogger />
       <Cursor />
       <Nav />
       <UwaLaunch />
