@@ -25,23 +25,26 @@ const plexMono = IBM_Plex_Mono({
 });
 
 const description =
-  "Alusi is an AI-augmented creative agency. We build brand experiences, campaigns, and content systems — engineered with African cultural intelligence.";
+  "Alusi is an international, tech-enabled production and marketing company working across strategy, branding, production, media and AI solutions.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://alusi.ai"),
-  title: "Alusi — AI-Augmented Creative Agency, Lagos",
+  metadataBase: new URL("https://alusiai.com"),
+  title: "Alusi — International Production & Marketing Company",
   description,
+  alternates: {
+    canonical: "https://alusiai.com/",
+  },
   openGraph: {
-    title: "Alusi — AI-Augmented Creative Agency, Lagos",
+    title: "Alusi — International Production & Marketing Company",
     description,
-    url: "https://alusi.ai",
+    url: "https://alusiai.com/",
     siteName: "Alusi",
     locale: "en",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Alusi — AI-Augmented Creative Agency, Lagos",
+    title: "Alusi — International Production & Marketing Company",
     description,
   },
 };

@@ -4,7 +4,7 @@ import { join } from "node:path";
 
 export const dynamic = "force-static";
 
-export const alt = "Alusi — AI is the loom. Culture is the thread.";
+export const alt = "Alusi — We turn ambition into action.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -52,10 +52,10 @@ export default async function OpenGraphImage() {
           }}
         >
           <div style={{ fontSize: 34, color: "#EDE6DA" }}>
-            AI is the loom. Culture is the thread.
+            We turn ambition into action.
           </div>
           <div style={{ fontSize: 22, color: "#B08D57", letterSpacing: 6 }}>
-            LAGOS · CULTURE-TECH
+            PRODUCTION · MARKETING · TECHNOLOGY
           </div>
         </div>
       </div>

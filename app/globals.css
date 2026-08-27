@@ -17,6 +17,21 @@
 
 html {
   scroll-behavior: smooth;
+  scrollbar-color: rgba(237, 230, 218, 0.42) #000000;
+  scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  border: 2px solid #000000;
+  background: rgba(237, 230, 218, 0.42);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -29,18 +44,6 @@ body {
   background: var(--color-ground);
   color: var(--color-ivory);
   text-rendering: optimizeLegibility;
-}
-
-/* Film grain — pure CSS, one fixed overlay over everything */
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 100;
-  pointer-events: none;
-  opacity: 0.05;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-size: 180px 180px;
 }
 
 /* Hero entrance — transform-only so the LCP heading is painted from the
