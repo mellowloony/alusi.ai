@@ -9,12 +9,12 @@ export const metadata: Metadata = {
   title: "Obiageri — Creative Strategy by Alusi",
   description,
   alternates: {
-    canonical: "https://alusiai.com/obiageri/",
+    canonical: "https://alusiai.com/obiageri",
   },
   openGraph: {
     title: "Obiageri — Creative Strategy by Alusi",
     description,
-    url: "https://alusiai.com/obiageri/",
+    url: "https://alusiai.com/obiageri",
     siteName: "Alusi",
     type: "website",
     images: [

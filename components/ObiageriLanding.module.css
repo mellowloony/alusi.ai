@@ -228,6 +228,20 @@
   line-height: 1.78;
 }
 
+.heroCopy strong {
+  color: var(--ivory);
+  font-weight: 600;
+}
+
+.creativeCredit {
+  color: var(--ivory);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  line-height: 1.45;
+  text-transform: uppercase;
+}
+
 .heroActions {
   display: flex;
   flex-wrap: wrap;
@@ -317,12 +331,42 @@
   line-height: 1.68;
 }
 
+.featureCopy p + p {
+  margin-top: 1rem;
+}
+
+.featureCopy .featureEmphasis {
+  color: var(--ivory);
+}
+
+.featureEmphasis strong {
+  font-weight: 600;
+}
+
 .sectionIntro {
   grid-column: 9 / 13;
   max-width: 31rem;
   align-self: end;
   color: var(--muted);
   line-height: 1.72;
+}
+
+.sectionIntro h3 {
+  color: var(--ivory);
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(1.5rem, 2.3vw, 2.35rem);
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  line-height: 1.08;
+  text-wrap: balance;
+}
+
+.sectionIntro p {
+  margin-top: 1rem;
+}
+
+.sectionIntro h3 + p {
+  margin-top: 1.6rem;
 }
 
 .codeGallery {
@@ -345,13 +389,18 @@
 }
 
 .codeCaption {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
+  display: grid;
+  gap: 1.15rem;
   padding-top: 0.95rem;
 }
 
-.codeCaption h3 {
+.codeHeading {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.codeHeading h3 {
   max-width: 13rem;
   font-size: clamp(1.05rem, 1.4vw, 1.35rem);
   font-weight: 500;
@@ -359,10 +408,21 @@
   line-height: 1.18;
 }
 
-.codeCaption p {
+.codeNote {
   padding-top: 0.17rem;
   color: var(--quiet);
+  font-size: 0.56rem;
+  letter-spacing: 0.16em;
+  line-height: 1.45;
   text-align: right;
+  text-transform: uppercase;
+}
+
+.codeDescription {
+  max-width: 24ch;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
 }
 
 .closing {
@@ -413,17 +473,27 @@
   text-align: center;
 }
 
-.closingInner p {
+.closingDefinition,
+.closingTagline {
   font-size: 0.68rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
 }
 
 .closingInner h2 {
-  margin-top: 1rem;
   font-size: clamp(4.2rem, 10vw, 6rem);
   letter-spacing: -0.04em;
   line-height: 0.86;
+}
+
+.closingDefinition {
+  margin-top: 1.75rem;
+  font-weight: 600;
+}
+
+.closingTagline {
+  margin-top: 0.8rem;
+  color: var(--muted);
 }
 
 .footer {

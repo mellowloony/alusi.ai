@@ -225,7 +225,7 @@ export default function HomeLanding() {
 
           <div className={styles.strategyFeature}>
             <Reveal className={styles.strategyVisual}>
-              <a href="/obiageri/" aria-label="View the Obiageri strategy case study">
+              <a href="/obiageri" aria-label="View the Obiageri strategy case study">
                 <img
                   src="/obiageri/hero.webp"
                   alt="Two Obiageri figures outside a heritage home with a vintage car"
@@ -242,9 +242,9 @@ export default function HomeLanding() {
             </Reveal>
 
             <Reveal delay={90} className={styles.strategyCopy}>
-              <h3>Taste is inherited.</h3>
+              <h3>Inherited taste.</h3>
               <p>For Obiageri, lineage became a positioning system and visual world.</p>
-              <a href="/obiageri/" className={styles.buttonLink}>
+              <a href="/obiageri" className={styles.buttonLink}>
                 View the strategy <Arrow />
               </a>
             </Reveal>

@@ -7,6 +7,7 @@ const codes = [
     alt: "A stylist adjusts the hand-finished cuff of an ivory Obiageri jacket",
     title: "Private fitting",
     note: "Lineage",
+    description: "Some things are made for you before you know to ask.",
     width: 1122,
     height: 1402,
   },
@@ -14,7 +15,8 @@ const codes = [
     src: "/obiageri/wardrobe.webp",
     alt: "A dark mahogany wardrobe holding a coordinated collection of Obiageri looks",
     title: "Inherited wardrobe",
-    note: "Discretion",
+    note: "Familiarity",
+    description: "Taste you did not learn.",
     width: 1122,
     height: 1402,
   },
@@ -22,7 +24,8 @@ const codes = [
     src: "/obiageri/interior.webp",
     alt: "Obiageri tailoring photographed in an intimate heritage interior",
     title: "After dark",
-    note: "Access",
+    note: "Discretion",
+    description: "Nothing to prove. Nothing to announce.",
     width: 1672,
     height: 941,
   },
@@ -31,6 +34,7 @@ const codes = [
     alt: "Obiageri figures gathered in a ceremonial tableau",
     title: "Ceremonial tableau",
     note: "Belonging",
+    description: "If you are involved, you are involved.",
     width: 1672,
     height: 941,
   },
@@ -88,15 +92,17 @@ export default function ObiageriLanding() {
             <div className={styles.heroStatement}>
               <div className="rise" style={{ animationDelay: "80ms" }}>
                 <h1 id="obiageri-title" className={styles.heroTitle}>
-                  Taste is inherited.
+                  Inherited taste.
                 </h1>
               </div>
 
               <div className={`${styles.heroCopy} rise`} style={{ animationDelay: "150ms" }}>
                 <p>
-                  Creative strategy for a Nigerian fashion house shaped by lineage,
-                  ceremony and quiet authority.
+                  <strong>Obiageri</strong> is a conceptual Nigerian fashion house
+                  exploring habitus — the tastes, codes and ways of being that are
+                  inherited rather than acquired.
                 </p>
+                <p className={styles.creativeCredit}>Creative Direction by Alusi</p>
                 <div className={styles.heroActions}>
                   <a href="#strategy" className={styles.textLink}>
                     View the strategy <Arrow />
@@ -141,15 +147,20 @@ export default function ObiageriLanding() {
               <div className={styles.imageShade} />
               <div className={styles.imageMeta}>
                 <span>Positioning</span>
-                <span>Lineage in contemporary form</span>
+                <span>A contemporary Nigerian house exploring inherited taste.</span>
               </div>
             </Reveal>
 
             <Reveal delay={90} className={styles.featureCopy}>
               <h3>Inherited, not acquired.</h3>
               <p>
-                We positioned Obiageri around habitus: taste carried through lineage,
-                familiarity and belonging—not performed for attention.
+                Obiageri exists in the space between Nigerian heritage and modern
+                luxury.
+              </p>
+              <p>
+                A world shaped by lineage, familiarity and belonging — where luxury
+                is not excess, but restraint. Not something performed, but something
+                already known.
               </p>
             </Reveal>
           </div>
@@ -178,15 +189,23 @@ export default function ObiageriLanding() {
               <div className={styles.imageShade} />
               <div className={styles.imageMeta}>
                 <span>Art direction</span>
-                <span>Memory, made present</span>
+                <span>Old Nigerian money, remembered.</span>
               </div>
             </Reveal>
 
             <Reveal delay={90} className={styles.featureCopy}>
-              <h3>Nostalgia, without reproduction.</h3>
+              <h3>Memory, made present.</h3>
               <p>
-                Heritage architecture, amber light and contemporary tailoring create
-                a world that feels remembered rather than recreated.
+                We drew from old Nigerian architecture, private homes, family
+                ceremonies and the quiet rituals of an older upper class.
+              </p>
+              <p>
+                Heritage forms meet contemporary fashion to create a world that feels
+                familiar without belonging to any particular time.
+              </p>
+              <p>Not nostalgia reproduced.</p>
+              <p className={styles.featureEmphasis}>
+                <strong>Nostalgia inherited.</strong>
               </p>
             </Reveal>
           </div>
@@ -202,7 +221,13 @@ export default function ObiageriLanding() {
               <h2 id="codes-title">The codes.</h2>
             </Reveal>
             <Reveal delay={80} className={styles.sectionIntro}>
-              <p>Lineage, discretion, ceremony and access.</p>
+              <h3>Lineage. Discretion. Ceremony. Access.</h3>
+              <p>The things nobody teaches you.</p>
+              <p>The rooms you already know how to behave in.</p>
+              <p>
+                The gestures, rituals and objects that feel ordinary only because you
+                grew up around them.
+              </p>
             </Reveal>
           </div>
 
@@ -220,8 +245,11 @@ export default function ObiageriLanding() {
                     />
                   </div>
                   <div className={styles.codeCaption}>
-                    <h3>{code.title}</h3>
-                    <p>{code.note}</p>
+                    <div className={styles.codeHeading}>
+                      <h3>{code.title}</h3>
+                      <p className={styles.codeNote}>{code.note}</p>
+                    </div>
+                    <p className={styles.codeDescription}>{code.description}</p>
                   </div>
                 </article>
               </Reveal>
@@ -249,8 +277,11 @@ export default function ObiageriLanding() {
             loading="lazy"
           />
           <Reveal className={styles.closingInner}>
-            <p>Born to live a good life.</p>
             <h2 id="closing-title">Obiageri</h2>
+            <p className={styles.closingDefinition}>
+              One who has come to enjoy wealth.
+            </p>
+            <p className={styles.closingTagline}>Born to live a good life.</p>
           </Reveal>
         </section>
       </main>
