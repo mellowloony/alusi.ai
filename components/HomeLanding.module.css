@@ -464,6 +464,11 @@
   color: rgba(237, 230, 218, 0.64);
 }
 
+.workCaption .workDisclosure {
+  margin-top: 0.3rem;
+  color: rgba(208, 178, 130, 0.88);
+}
+
 .workCaption > span {
   padding-top: 0.2rem;
   font-family: var(--font-body), sans-serif;

@@ -8,11 +8,19 @@ import styles from "./HomeLanding.module.css";
 const UWA = "\u00D9w\u00E0";
 const MEDIA_VERSION = "0829";
 
-const workFilms = [
+type WorkFilmEntry = {
+  src: string;
+  poster: string;
+  title: string;
+  speculative?: boolean;
+};
+
+const workFilms: WorkFilmEntry[] = [
   {
     src: "/work-film-01.mp4",
     poster: "/work-film-01-poster.avif",
     title: "Ashluxe",
+    speculative: true,
   },
   {
     src: "/work-film-02.mp4",
@@ -23,16 +31,19 @@ const workFilms = [
     src: "/work-film-03.mp4",
     poster: "/work-film-03-poster.avif",
     title: "Mekallia",
+    speculative: true,
   },
   {
     src: "/work-film-04.mp4",
     poster: "/work-film-04-poster.avif",
     title: "Shinzo Brand",
+    speculative: true,
   },
   {
     src: "/work-film-05.mp4",
     poster: "/work-film-05-poster.avif",
     title: "Kilentar",
+    speculative: true,
   },
   {
     src: "/work-film-06.mp4",
@@ -58,6 +69,7 @@ const workFilms = [
     src: "/work-film-10.mp4",
     poster: "/work-film-10-poster.avif",
     title: "Edala Development",
+    speculative: true,
   },
   {
     src: "/work-film-11.mp4",
@@ -285,6 +297,9 @@ export default function HomeLanding() {
                     <div>
                       <h3>{film.title}</h3>
                       <p>Direction / Cinematic production</p>
+                      {film.speculative ? (
+                        <p className={styles.workDisclosure}>Speculative</p>
+                      ) : null}
                     </div>
                     <span>{String(index + 1).padStart(2, "0")} / 16</span>
                   </div>
