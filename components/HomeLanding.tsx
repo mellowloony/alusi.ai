@@ -6,7 +6,7 @@ import ContactForm from "./ContactForm";
 import styles from "./HomeLanding.module.css";
 
 const UWA = "\u00D9w\u00E0";
-const MEDIA_VERSION = "0829";
+const MEDIA_VERSION = "0901";
 
 type WorkFilmEntry = {
   src: string;
@@ -18,87 +18,87 @@ type WorkFilmEntry = {
 const workFilms: WorkFilmEntry[] = [
   {
     src: "/work-film-01.mp4",
-    poster: "/work-film-01-poster.avif",
+    poster: "/work-film-01-poster.webp",
     title: "Ashluxe",
     speculative: true,
   },
   {
     src: "/work-film-02.mp4",
-    poster: "/work-film-02-poster.avif",
+    poster: "/work-film-02-poster.webp",
     title: "UWA",
   },
   {
     src: "/work-film-03.mp4",
-    poster: "/work-film-03-poster.avif",
+    poster: "/work-film-03-poster.webp",
     title: "Mekallia",
     speculative: true,
   },
   {
     src: "/work-film-04.mp4",
-    poster: "/work-film-04-poster.avif",
+    poster: "/work-film-04-poster.webp",
     title: "Shinzo Brand",
     speculative: true,
   },
   {
     src: "/work-film-05.mp4",
-    poster: "/work-film-05-poster.avif",
+    poster: "/work-film-05-poster.webp",
     title: "Kilentar",
     speculative: true,
   },
   {
     src: "/work-film-06.mp4",
-    poster: "/work-film-06-poster.avif",
+    poster: "/work-film-06-poster.webp",
     title: "Murals.ng",
   },
   {
     src: "/work-film-07.mp4",
-    poster: "/work-film-07-poster.avif",
+    poster: "/work-film-07-poster.webp",
     title: "The Vibe Abuja",
   },
   {
     src: "/work-film-08.mp4",
-    poster: "/work-film-08-poster.avif",
+    poster: "/work-film-08-poster.webp",
     title: "The Vibe Abuja",
   },
   {
     src: "/work-film-09.mp4",
-    poster: "/work-film-09-poster.avif",
+    poster: "/work-film-09-poster.webp",
     title: "Murals.ng",
   },
   {
     src: "/work-film-10.mp4",
-    poster: "/work-film-10-poster.avif",
+    poster: "/work-film-10-poster.webp",
     title: "Edala Development",
     speculative: true,
   },
   {
     src: "/work-film-11.mp4",
-    poster: "/work-film-11-poster.avif",
+    poster: "/work-film-11-poster.webp",
     title: "Spaces.Murals.ng",
   },
   {
     src: "/work-film-12.mp4",
-    poster: "/work-film-12-poster.avif",
+    poster: "/work-film-12-poster.webp",
     title: "Murals.ng",
   },
   {
     src: "/work-film-13.mp4",
-    poster: "/work-film-13-poster.avif",
+    poster: "/work-film-13-poster.webp",
     title: "UWA",
   },
   {
     src: "/work-film-16.mp4",
-    poster: "/work-film-16-poster.avif",
+    poster: "/work-film-16-poster.webp",
     title: "Murals.ng",
   },
   {
     src: "/work-film-17.mp4",
-    poster: "/work-film-17-poster.avif",
+    poster: "/work-film-17-poster.webp",
     title: "The Vibe Abuja",
   },
   {
     src: "/work-film-19.mp4",
-    poster: "/work-film-19-poster.avif",
+    poster: "/work-film-19-poster.webp",
     title: "Skah Lagos",
   },
 ];
@@ -289,7 +289,7 @@ export default function HomeLanding() {
                   <figure className={styles.workMedia}>
                     <WorkFilm
                       src={`${film.src}?v=${MEDIA_VERSION}`}
-                      poster={film.poster}
+                      poster={`${film.poster}?v=${MEDIA_VERSION}`}
                       className={styles.workFilm}
                     />
                   </figure>

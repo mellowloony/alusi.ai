@@ -41,7 +41,7 @@ export default function HeroFilm() {
   return (
     <div className="relative h-full w-full">
       <img
-        src="/alusi-hero-poster.avif?v=0829"
+        src="/alusi-hero-poster.webp?v=0901"
         alt=""
         width={1920}
         height={1080}
