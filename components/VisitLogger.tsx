@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { createClient } from "../lib/supabase/client";
+import { insertPublicRow } from "../lib/supabase/public-insert";
 
 /* Logs one visit per browser session (sessionStorage guard so refreshes don't
    inflate the count) with a persistent anonymous visitor id (localStorage) so
@@ -20,17 +20,15 @@ export default function VisitLogger() {
         localStorage.setItem("uwa-visitor-id", visitorId);
       }
 
-      createClient()
-        .from("visits")
-        .insert({
+      void insertPublicRow(
+        "visits",
+        {
           visitor_id: visitorId,
           path: window.location.pathname,
           referrer: document.referrer || null,
-        })
-        .then(
-          () => {},
-          () => {},
-        );
+        },
+        { keepalive: true },
+      ).catch(() => {});
     } catch {
       /* storage blocked, private mode, or env missing — skip silently */
     }

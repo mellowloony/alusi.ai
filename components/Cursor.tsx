@@ -23,6 +23,32 @@ export default function Cursor() {
     let hovering = false;
     let shown = false;
     let raf = 0;
+    let running = false;
+
+    const loop = () => {
+      rx += (mx - rx) * 0.18;
+      ry += (my - ry) * 0.18;
+      scale += ((hovering ? 1.8 : 1) - scale) * 0.2;
+      el.style.transform = `translate(${rx}px, ${ry}px) translate(-50%, -50%) scale(${scale})`;
+
+      const settled =
+        Math.abs(mx - rx) < 0.1 &&
+        Math.abs(my - ry) < 0.1 &&
+        Math.abs((hovering ? 1.8 : 1) - scale) < 0.005;
+
+      if (settled) {
+        running = false;
+        return;
+      }
+
+      raf = requestAnimationFrame(loop);
+    };
+
+    const startLoop = () => {
+      if (running) return;
+      running = true;
+      raf = requestAnimationFrame(loop);
+    };
 
     const onMove = (e: MouseEvent) => {
       mx = e.clientX;
@@ -31,24 +57,17 @@ export default function Cursor() {
         shown = true;
         el.style.opacity = "1";
       }
+      startLoop();
     };
     const onOver = (e: MouseEvent) => {
       const t = e.target as Element | null;
       hovering = !!t?.closest("a, button, input, [data-cursor]");
+      startLoop();
     };
     const onLeave = () => {
       shown = false;
       el.style.opacity = "0";
     };
-
-    const loop = () => {
-      rx += (mx - rx) * 0.18;
-      ry += (my - ry) * 0.18;
-      scale += ((hovering ? 1.8 : 1) - scale) * 0.2;
-      el.style.transform = `translate(${rx}px, ${ry}px) translate(-50%, -50%) scale(${scale})`;
-      raf = requestAnimationFrame(loop);
-    };
-    loop();
 
     window.addEventListener("mousemove", onMove);
     window.addEventListener("mouseover", onOver);

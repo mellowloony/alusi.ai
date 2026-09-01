@@ -9,12 +9,14 @@ const eczar = Eczar({
   subsets: ["latin", "latin-ext"],
   variable: "--font-eczar",
   display: "optional",
+  preload: false,
 });
 
 const grotesk = Space_Grotesk({
   subsets: ["latin", "latin-ext", "vietnamese"],
   variable: "--font-grotesk",
   display: "optional",
+  preload: false,
 });
 
 const plexMono = IBM_Plex_Mono({
@@ -22,6 +24,7 @@ const plexMono = IBM_Plex_Mono({
   weight: ["400"],
   variable: "--font-plex-mono",
   display: "optional",
+  preload: false,
 });
 
 const description =

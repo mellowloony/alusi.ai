@@ -1,9 +1,10 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function HeroFilm() {
   const ref = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   useEffect(() => {
     const video = ref.current;
@@ -38,20 +39,33 @@ export default function HeroFilm() {
   }, []);
 
   return (
-    <video
-      ref={ref}
-      className="h-full w-full object-cover"
-      loop
-      muted
-      playsInline
-      preload="metadata"
-      poster="/alusi-hero-poster.jpg?v=0824"
-      aria-hidden="true"
-      tabIndex={-1}
-      disablePictureInPicture
-      disableRemotePlayback
-    >
-      <source src="/alusi-hero.mp4?v=0824" type="video/mp4" />
-    </video>
+    <div className="relative h-full w-full">
+      <img
+        src="/alusi-hero-poster.avif?v=0829"
+        alt=""
+        width={1920}
+        height={1080}
+        loading="eager"
+        decoding="async"
+        fetchPriority="high"
+        aria-hidden="true"
+        className={`absolute inset-0 z-10 h-full w-full object-cover transition-opacity duration-500 motion-reduce:transition-none ${isPlaying ? "opacity-0" : "opacity-100"}`}
+      />
+      <video
+        ref={ref}
+        className="h-full w-full object-cover"
+        loop
+        muted
+        playsInline
+        preload="none"
+        onPlaying={() => setIsPlaying(true)}
+        aria-hidden="true"
+        tabIndex={-1}
+        disablePictureInPicture
+        disableRemotePlayback
+      >
+        <source src="/alusi-hero.mp4?v=0829" type="video/mp4" />
+      </video>
+    </div>
   );
 }

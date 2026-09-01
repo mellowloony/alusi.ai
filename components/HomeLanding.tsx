@@ -6,86 +6,87 @@ import ContactForm from "./ContactForm";
 import styles from "./HomeLanding.module.css";
 
 const UWA = "\u00D9w\u00E0";
+const MEDIA_VERSION = "0829";
 
 const workFilms = [
   {
     src: "/work-film-01.mp4",
-    poster: "/work-film-01-poster.jpg",
+    poster: "/work-film-01-poster.avif",
     title: "Ashluxe",
   },
   {
     src: "/work-film-02.mp4",
-    poster: "/work-film-02-poster.jpg",
+    poster: "/work-film-02-poster.avif",
     title: "UWA",
   },
   {
     src: "/work-film-03.mp4",
-    poster: "/work-film-03-poster.jpg",
+    poster: "/work-film-03-poster.avif",
     title: "Mekallia",
   },
   {
     src: "/work-film-04.mp4",
-    poster: "/work-film-04-poster.jpg",
+    poster: "/work-film-04-poster.avif",
     title: "Shinzo Brand",
   },
   {
     src: "/work-film-05.mp4",
-    poster: "/work-film-05-poster.jpg",
+    poster: "/work-film-05-poster.avif",
     title: "Kilentar",
   },
   {
     src: "/work-film-06.mp4",
-    poster: "/work-film-06-poster.jpg",
+    poster: "/work-film-06-poster.avif",
     title: "Murals.ng",
   },
   {
     src: "/work-film-07.mp4",
-    poster: "/work-film-07-poster.jpg",
+    poster: "/work-film-07-poster.avif",
     title: "The Vibe Abuja",
   },
   {
     src: "/work-film-08.mp4",
-    poster: "/work-film-08-poster.jpg",
+    poster: "/work-film-08-poster.avif",
     title: "The Vibe Abuja",
   },
   {
     src: "/work-film-09.mp4",
-    poster: "/work-film-09-poster.jpg",
+    poster: "/work-film-09-poster.avif",
     title: "Murals.ng",
   },
   {
     src: "/work-film-10.mp4",
-    poster: "/work-film-10-poster.jpg",
+    poster: "/work-film-10-poster.avif",
     title: "Edala Development",
   },
   {
     src: "/work-film-11.mp4",
-    poster: "/work-film-11-poster.jpg",
+    poster: "/work-film-11-poster.avif",
     title: "Spaces.Murals.ng",
   },
   {
     src: "/work-film-12.mp4",
-    poster: "/work-film-12-poster.jpg",
+    poster: "/work-film-12-poster.avif",
     title: "Murals.ng",
   },
   {
     src: "/work-film-13.mp4",
-    poster: "/work-film-13-poster.jpg",
+    poster: "/work-film-13-poster.avif",
     title: "UWA",
   },
   {
     src: "/work-film-16.mp4",
-    poster: "/work-film-16-poster.jpg",
+    poster: "/work-film-16-poster.avif",
     title: "Murals.ng",
   },
   {
     src: "/work-film-17.mp4",
-    poster: "/work-film-17-poster.jpg",
+    poster: "/work-film-17-poster.avif",
     title: "The Vibe Abuja",
   },
   {
     src: "/work-film-19.mp4",
-    poster: "/work-film-19-poster.jpg",
+    poster: "/work-film-19-poster.avif",
     title: "Skah Lagos",
   },
 ];
@@ -127,7 +128,7 @@ export default function HomeLanding() {
       <main id="main-content">
         <section id="top" className={styles.hero} aria-labelledby="home-title">
           <div className={styles.heroStage}>
-            <div className={`${styles.heroVisual} rise`}>
+            <div className={styles.heroVisual}>
               <HeroFilm />
             </div>
 
@@ -275,9 +276,9 @@ export default function HomeLanding() {
                 <article className={styles.workCard}>
                   <figure className={styles.workMedia}>
                     <WorkFilm
-                      src={film.src}
+                      src={`${film.src}?v=${MEDIA_VERSION}`}
                       poster={film.poster}
-                      preload={film.src === "/work-film-19.mp4" ? "auto" : "metadata"}
+                      className={styles.workFilm}
                     />
                   </figure>
                   <div className={styles.workCaption}>

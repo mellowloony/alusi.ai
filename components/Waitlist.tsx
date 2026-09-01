@@ -1,7 +1,10 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { createClient } from "../lib/supabase/client";
+import {
+  insertPublicRow,
+  PublicInsertError,
+} from "../lib/supabase/public-insert";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -33,12 +36,14 @@ export default function Waitlist({
     }
     setStatus("submitting");
     try {
-      const supabase = createClient();
-      const { error } = await supabase.from("waitlist").insert({ email: value });
-      // 23505 = unique violation: this email already joined. Treat as success.
-      if (error && error.code !== "23505") throw error;
+      await insertPublicRow("waitlist", { email: value });
       setStatus("success");
-    } catch {
+    } catch (error) {
+      // 23505 = unique violation: this email already joined. Treat as success.
+      if (error instanceof PublicInsertError && error.code === "23505") {
+        setStatus("success");
+        return;
+      }
       setStatus("error");
     }
   }

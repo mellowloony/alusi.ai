@@ -429,12 +429,18 @@
   background: #0f0f0f;
 }
 
-.workMedia video {
+.workFilm,
+.workFilm > img,
+.workFilm > video {
   position: absolute;
   inset: 0;
   display: block;
   width: 100%;
   height: 100%;
+}
+
+.workFilm > img,
+.workFilm > video {
   object-fit: cover;
 }
 
