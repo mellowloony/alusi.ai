@@ -1,0 +1,77 @@
+/* Three quiet sections inside the existing Alusi system. The hero uses the
+   homepage's actual layout classes; only navigation is omitted. */
+.header {
+  position: absolute;
+  z-index: 30;
+  inset: 0 0 auto;
+  padding: 0.625rem var(--page-pad);
+}
+
+.pillars {
+  margin-top: 1.9rem;
+  color: var(--ivory);
+  font-size: 0.75rem;
+  line-height: 2;
+}
+.pillars strong { font-weight: 700; white-space: nowrap; }
+.pillars > span { margin-inline: 0.35rem; color: var(--quiet); }
+
+.filmPlayer { position: relative; width: 100%; height: 100%; }
+.filmPlayer video, .filmPoster {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.filmPoster { position: absolute; inset: 0; pointer-events: none; }
+.filmError { position: absolute; inset: auto 0 0; padding: 1rem; background: #000; color: #ede6da; font-size: 0.85rem; }
+.filmError a { text-decoration: underline; text-underline-offset: 0.2em; }
+
+.positioning, .creative {
+  padding: clamp(5rem, 8vw, 8rem) var(--page-pad);
+  border-top: 1px solid var(--line);
+}
+.positioning {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 5fr);
+  align-items: center;
+  gap: clamp(3rem, 10vw, 10rem);
+}
+.portrait { width: min(100%, 31rem); margin: 0; }
+.portrait img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 30%; border-radius: 12px; }
+.positioning h2, .creative h2 {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(2.5rem, 4.2vw, 4.5rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+.positioningCopy > p { margin-top: 2rem; color: var(--muted); font-size: 1rem; line-height: 1.75; }
+.deliverables { display: grid; gap: 1rem; margin: 2rem 0 0; padding: 0; list-style: none; }
+.deliverables li { display: flex; align-items: baseline; gap: 0.85rem; color: var(--ivory); font-size: 0.95rem; line-height: 1.6; }
+.deliverables svg { width: 1rem; height: 1rem; flex: none; align-self: start; margin-top: 0.25rem; stroke: currentColor; stroke-width: 1.25; }
+.creativeLead { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 4fr); gap: clamp(3rem, 7vw, 7rem); align-items: end; }
+.creativeLead > p { max-width: 45ch; color: var(--muted); font-size: 1rem; line-height: 1.75; }
+.imagePair { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1.25rem, 3vw, 3rem); margin-top: 3rem; }
+.imagePair img { display: block; width: 100%; height: auto; aspect-ratio: 5 / 4; object-fit: cover; object-position: center 38%; border-radius: 12px; }
+
+@media (min-width: 768px) and (max-width: 1080px) {
+  .heroStatement { padding-inline: 0; }
+}
+@media (max-width: 900px) {
+  .hero.hero { min-height: 0; height: auto; padding-top: 6rem; padding-bottom: 3rem; }
+  .heroStage.heroStage { display: block; }
+  .heroVisual.heroVisual { width: 100%; aspect-ratio: 16 / 9; }
+  .heroStatement.heroStatement { width: 100%; max-width: none; justify-self: stretch; margin-top: 1.75rem; padding-inline: 0; }
+  .heroWordmark.heroWordmark { width: min(55%, 12rem); margin-top: 1.5rem; }
+}
+@media (max-width: 767px) {
+  .positioning { grid-template-columns: 1fr; gap: 2.5rem; }
+  .portrait { max-width: 28rem; }
+  .positioning h2, .creative h2 { font-size: clamp(2.4rem, 9vw, 3.5rem); }
+  .creativeLead { grid-template-columns: 1fr; gap: 1.5rem; }
+  .imagePair { gap: 1rem; margin-top: 2rem; }
+  .imagePair img { aspect-ratio: 3 / 4; }
+  .pillars { margin-top: 1.5rem; font-size: 0.7rem; }
+}
