@@ -80,18 +80,12 @@
   grid-template-columns: minmax(0, 6fr) minmax(18rem, 4fr);
   gap: clamp(3rem, 8vw, 8rem);
 }
-.strategyLead > p {
-  margin-bottom: 1.5rem;
-  color: var(--quiet);
-  font-size: 0.62rem;
-  letter-spacing: 0.16em;
-}
 .strategyLead h2 { max-width: 12ch; }
 .strategyCopy { max-width: 40rem; padding-top: 0.25rem; }
 .strategyCopy p { color: var(--muted); font-size: 1rem; line-height: 1.8; }
 .strategyCopy p + p { margin-top: 1.25rem; }
 .archetypeImage { margin: clamp(3rem, 6vw, 6rem) 0 0; overflow: hidden; border-radius: 12px; }
-.archetypeImage img { display: block; width: 100%; height: auto; max-height: 42rem; object-fit: cover; object-position: center 27%; }
+.archetypeImage img { display: block; width: 100%; height: auto; }
 .mediaBuying { padding-bottom: clamp(7rem, 12vw, 12rem); }
 .mediaGrid { align-items: end; }
 .mediaGrid h2 { max-width: 16ch; font-size: clamp(3rem, 5.8vw, 6rem); }
@@ -114,6 +108,5 @@
   .archetypeGrid, .mediaGrid { grid-template-columns: 1fr; gap: 2rem; }
   .strategyLead h2, .mediaGrid h2 { max-width: none; }
   .archetypeImage { margin-top: 3rem; }
-  .archetypeImage img { aspect-ratio: 4 / 5; }
   .pillars { margin-top: 1.5rem; font-size: 0.7rem; }
 }

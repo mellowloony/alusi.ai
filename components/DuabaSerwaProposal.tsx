@@ -80,20 +80,19 @@ export default function DuabaSerwaProposal() {
           </div>
         </section>
 
-        <section className={`${styles.strategySection} ${styles.archetype}`} aria-labelledby="archetype-title">
-          <div className={styles.sectionLabel}>03 / ARCHETYPE</div>
+        <section className={styles.strategySection} aria-labelledby="archetype-title">
+          <div className={styles.sectionLabel}>03 / PARTNERSHIPS</div>
           <div className={styles.archetypeGrid}>
             <div className={styles.strategyLead}>
-              <p>THE IDEAL PARTNERSHIP</p>
-              <h2 id="archetype-title">Expand the Duaba world through aligned influence.</h2>
+              <h2 id="archetype-title">ARCHETYPES</h2>
             </div>
             <div className={styles.strategyCopy}>
-              <p>The right partnership does more than place Duaba Serwa in front of an audience. It brings the house into a world of aligned taste, cultural relevance, and credible influence.</p>
-              <p>We will identify collaborators whose point of view reflects the brand, then shape campaigns that feel like a natural extension of Duaba’s visual language. New audiences discover the house through people they already trust.</p>
+              <p>The people associated with Duaba Serwa should feel like natural extensions of the brand’s world. We will define the right archetypes - founders, cultural figures, and women doing exceptional things, whose identity, taste, and ambition reinforce what the brand represents.</p>
+              <p>The right partnerships shape perception. By consistently placing Duaba Serwa around the right people, communities, and cultural moments, we expand the brand’s universe and build stronger associations around it.</p>
             </div>
           </div>
           <figure className={styles.archetypeImage}>
-            <img src="/duaba-serwa/color-fold.webp" alt="Duaba Serwa portrait with sculptural pleats in orange, blue and gold" width={2000} height={3000} loading="lazy" decoding="async" />
+            <img src="/duaba-serwa/fashion-editorial-dusk.webp" alt="Woman in a sculptural copper dress walking through a glass atrium at dusk" width={2112} height={1168} loading="lazy" decoding="async" />
           </figure>
         </section>
 

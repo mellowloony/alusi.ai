@@ -13,14 +13,14 @@ Scope and mode
 Composition and content
 1. Hero: reuse HomeLanding.module.css for the film-left/text-right composition. Keep the supplied Duaba Serwa positioning copy and the bold “African Luxury | Noble Femininity | Sculptural Craft” pillars.
 2. Creative Direction: portrait left and supplied overview right. Present five deliverables as native, keyboard-accessible disclosure rows. Each row opens to its supplied one-sentence description; no custom video or navigation controls are introduced.
-3. Archetype: explain how aligned partnerships and influencer campaigns expand the Duaba world through shared taste, cultural relevance, and trusted discovery. Pair the editorial copy with color-fold.webp.
+3. Archetypes: use the supplied `ARCHETYPES` heading and two supplied paragraphs about founders, cultural figures, exceptional women, and perception-shaping partnerships. Pair the copy with the user-provided fashion-editorial-dusk.webp visual.
 4. Media Buying: lead with “Imagine having the best product in the world. You do the world a disservice if nobody knows about it.” Explain media buying as a principal growth lever that builds recognition, demand, and measurable growth.
 
 Visual and responsive rules
 - Retain the homepage's black ground, warm ivory, Eczar statements, Space Grotesk reading copy, fine rules, approved Alusi wordmark, and 12px media radii.
 - Keep no navigation region, chapter index, appended footer, or extra proposal interface. The small Alusi home link and skip-to-content link remain.
 - Use thin ruled disclosure rows with a rotating chevron and restrained secondary copy. At 900px and below, stack the homepage hero at full width. At 767px and below, stack all split layouts and preserve comfortable reading measures.
-- The Archetype section is an editorial text-and-image spread. Media Buying is a quiet text-led close.
+- The Archetypes section is an editorial text-and-image spread that preserves the supplied landscape visual without cropping. Media Buying is a quiet text-led close.
 
 Film behavior and provenance
 - Use public/duaba-serwa/opening-film.mp4: the full approximately 20-second, 1920×1080 H.264/AAC film with original audio.
