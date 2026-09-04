@@ -12,16 +12,18 @@ Scope and mode
 
 Composition and content
 1. Hero: reuse HomeLanding.module.css for the film-left/text-right composition. Keep the supplied positioning copy and bold “African Luxury | Noble Femininity | Sculptural Craft” pillars.
-2. Creative Direction: use the shared editorial section structure. Present the supplied overview and five keyboard-accessible disclosure rows with their supplied one-sentence descriptions. Place the Duaba portrait below the text grid in a restrained landscape crop.
-3. Archetypes: use the shared editorial section structure with the supplied `ARCHETYPES` heading and two supplied paragraphs about founders, cultural figures, exceptional women, and perception-shaping partnerships. Preserve the user-provided fashion-editorial-dusk.webp landscape visual below the text grid.
-4. Case Study — Tapestry: place this section immediately before Media Buying. Use the supplied heading and paragraph exactly, followed by the user-provided artist-studio visual served as tapestry-case-study.webp.
-5. Media Buying: use the shared editorial section structure. Keep `MEDIA BUYING` as the section heading, the supplied best-product statement as the lead, and the growth-lever explanation below it.
+2. Creative Direction: follow the hero's split structure with the Duaba portrait left and the supplied overview plus five keyboard-accessible disclosure rows right.
+3. Archetypes: follow the same split structure with fashion-editorial-dusk.webp left and the supplied `ARCHETYPES` heading and partnership copy right.
+4. Case Study — Tapestry: follow the same split structure with tapestry-case-study.webp left and the supplied heading and paragraph right. Keep this section immediately before Media Buying.
+5. Media Buying: follow the same split structure with gold-fold.webp left and the supplied `MEDIA BUYING` heading and two supplied paragraphs right:
+   “The best product in the world means little if the world never sees it.”
+   “Media buying becomes a key growth lever — putting Duaba Serwa in front of people who may never have discovered the brand organically, and turning strong creative into measurable reach, demand, and conversion.”
 
 Shared layout and responsive rules
-- All content sections after the hero use the same structure: small numbered label, left-hand title, right-hand copy, and a full-width visual below when one is supplied.
+- The hero defines the page layout. Every subsequent section uses the same 12-column split: a 7-column, rounded 11:6 visual on the left and a padded 5-column statement on the right.
 - Retain the homepage's black ground, warm ivory, Eczar statements, Space Grotesk copy, fine rules, approved Alusi wordmark, and 12px media radii.
 - Keep no navigation region, chapter index, appended footer, or extra proposal interface. The small Alusi home link and skip-to-content link remain.
-- At 900px and below, stack the homepage hero at full width. At 767px and below, stack every editorial grid into a single reading column while preserving the same label-title-copy-media order.
+- At 900px and below, stack every section in the same order as the hero: visual first, statement second, both full width.
 
 Film behavior and provenance
 - Use public/duaba-serwa/opening-film.mp4: the full approximately 20-second, 1920×1080 H.264/AAC film with original audio.
@@ -30,4 +32,4 @@ Film behavior and provenance
 - Preserve the poster, load-error link, noscript fallback, descriptive image alternatives, lazy loading, and provenance sidecars.
 
 Completion evidence
-- Desktop, tablet, and mobile checks confirmed five sections, consistent editorial structure, five working disclosures, automatic playback, audible playback when permitted, no controls, no navigation, loaded imagery, no horizontal overflow, and no page errors.
+- Desktop, tablet, and mobile checks confirmed five sections, consistent hero-derived split layouts, five working disclosures, automatic playback, audible playback when permitted, no controls, no navigation, loaded imagery, no horizontal overflow, and no page errors.
