@@ -30,7 +30,10 @@
 .splitSection, .mediaSection, .roadmapSection {
   padding: clamp(5rem, 8vw, 8rem) var(--page-pad);
   border-top: 1px solid var(--line);
+  content-visibility: auto;
+  contain-intrinsic-size: auto 52rem;
 }
+.roadmapSection { contain-intrinsic-size: auto 70rem; }
 .splitSection {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));

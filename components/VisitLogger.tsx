@@ -10,28 +10,32 @@ import { insertPublicRow } from "../lib/supabase/public-insert";
    public cannot read what's written. */
 export default function VisitLogger() {
   useEffect(() => {
-    try {
-      if (sessionStorage.getItem("uwa-visit-logged")) return;
-      sessionStorage.setItem("uwa-visit-logged", "1");
+    const timeoutId = window.setTimeout(() => {
+      try {
+        if (sessionStorage.getItem("uwa-visit-logged")) return;
+        sessionStorage.setItem("uwa-visit-logged", "1");
 
-      let visitorId = localStorage.getItem("uwa-visitor-id");
-      if (!visitorId) {
-        visitorId = crypto.randomUUID();
-        localStorage.setItem("uwa-visitor-id", visitorId);
+        let visitorId = localStorage.getItem("uwa-visitor-id");
+        if (!visitorId) {
+          visitorId = crypto.randomUUID();
+          localStorage.setItem("uwa-visitor-id", visitorId);
+        }
+
+        void insertPublicRow(
+          "visits",
+          {
+            visitor_id: visitorId,
+            path: window.location.pathname,
+            referrer: document.referrer || null,
+          },
+          { keepalive: true },
+        ).catch(() => {});
+      } catch {
+        /* storage blocked, private mode, or env missing — skip silently */
       }
+    }, 3500);
 
-      void insertPublicRow(
-        "visits",
-        {
-          visitor_id: visitorId,
-          path: window.location.pathname,
-          referrer: document.referrer || null,
-        },
-        { keepalive: true },
-      ).catch(() => {});
-    } catch {
-      /* storage blocked, private mode, or env missing — skip silently */
-    }
+    return () => window.clearTimeout(timeoutId);
   }, []);
 
   return null;

@@ -25,10 +25,13 @@ export const metadata: Metadata = {
 };
 
 export default function DuabaSerwaPage() {
-  preload("/duaba-serwa/opening-film-poster.webp", {
+  preload("/duaba-serwa/opening-film-poster-960.avif", {
     as: "image",
-    type: "image/webp",
+    type: "image/avif",
     fetchPriority: "high",
+    imageSrcSet:
+      "/duaba-serwa/opening-film-poster-640.avif 640w, /duaba-serwa/opening-film-poster-960.avif 960w, /duaba-serwa/opening-film-poster-1440.avif 1440w",
+    imageSizes: "(max-width: 900px) calc(100vw - 40px), min(50vw, 752px)",
   });
 
   return <DuabaSerwaProposal />;

@@ -3,6 +3,7 @@ import HeroFilm from "./HeroFilm";
 import WorkFilm from "./WorkFilm";
 import VisitLogger from "./VisitLogger";
 import ContactForm from "./ContactForm";
+import ResponsivePicture from "./ResponsivePicture";
 import styles from "./HomeLanding.module.css";
 
 const UWA = "\u00D9w\u00E0";
@@ -127,7 +128,16 @@ export default function HomeLanding() {
 
       <header className={styles.header}>
         <a href="#top" aria-label="Alusi home" className={styles.logoLink}>
-          <img src="/alusi-wordmark.png" alt="Alusi" width={800} height={320} />
+          <ResponsivePicture
+            src="/alusi-wordmark.png"
+            alt="Alusi"
+            width={800}
+            height={320}
+            widths={[160, 320, 640]}
+            sizes="80px"
+            loading="eager"
+            avif={false}
+          />
         </a>
 
         <nav aria-label="Primary" className={styles.navLinks}>
@@ -169,12 +179,15 @@ export default function HomeLanding() {
             </div>
 
             <div className={`${styles.heroWordmark} rise`} style={{ animationDelay: "220ms" }}>
-              <img
+              <ResponsivePicture
                 src="/alusi-wordmark.png"
                 alt=""
-                aria-hidden="true"
                 width={800}
                 height={320}
+                widths={[160, 320, 640]}
+                sizes="(max-width: 767px) 55vw, min(40vw, 304px)"
+                ariaHidden
+                avif={false}
               />
             </div>
           </div>
@@ -193,17 +206,28 @@ export default function HomeLanding() {
 
           <div className={styles.solutionFeature}>
             <Reveal className={styles.solutionVisual}>
-              <a href="/uwa/" aria-label={`Explore ${UWA}`}>
-                <img
+              <a href="/uwa" aria-label={`Explore ${UWA}`}>
+                <ResponsivePicture
                   src="/uwa-world-01.webp"
                   alt="A red craft crosses a reflective world towards a monumental passage"
                   width={1672}
                   height={941}
+                  widths={[640, 960, 1440]}
+                  sizes="(max-width: 767px) calc(100vw - 40px), (max-width: 1080px) 58vw, min(65vw, 1200px)"
                   loading="lazy"
+                  fetchPriority="low"
                 />
                 <div className={styles.imageShade} />
                 <div className={styles.solutionMark}>
-                  <img src="/uwa-wordmark.png" alt={UWA} width={1337} height={612} />
+                  <ResponsivePicture
+                    src="/uwa-wordmark.png"
+                    alt={UWA}
+                    width={1337}
+                    height={612}
+                    widths={[240, 480]}
+                    sizes="(max-width: 767px) 34vw, min(14vw, 160px)"
+                    avif={false}
+                  />
                 </div>
                 <div className={styles.imageMeta}>
                   <span>Alusi solution / {UWA}</span>
@@ -218,7 +242,7 @@ export default function HomeLanding() {
                 A technology layer for brands and creators to build cinematic
                 narratives beyond the limits of traditional production.
               </p>
-              <a href="/uwa/" className={styles.buttonLink}>
+              <a href="/uwa" className={styles.buttonLink}>
                 Explore {UWA} <Arrow />
               </a>
             </Reveal>
@@ -239,12 +263,15 @@ export default function HomeLanding() {
           <div className={styles.strategyFeature}>
             <Reveal className={styles.strategyVisual}>
               <a href="/obiageri" aria-label="View the Obiageri strategy case study">
-                <img
+                <ResponsivePicture
                   src="/obiageri/hero.webp"
                   alt="Two Obiageri figures outside a heritage home with a vintage car"
                   width={1672}
                   height={941}
+                  widths={[640, 960, 1440]}
+                  sizes="(max-width: 767px) calc(100vw - 40px), (max-width: 1080px) 58vw, min(65vw, 1200px)"
                   loading="lazy"
+                  fetchPriority="low"
                 />
                 <div className={styles.imageShade} />
                 <div className={styles.imageMeta}>
@@ -328,7 +355,15 @@ export default function HomeLanding() {
 
       <footer id="site-footer" className={styles.footer}>
         <a href="#top" aria-label="Back to top" className={styles.footerLogo}>
-          <img src="/alusi-wordmark.png" alt="Alusi" width={800} height={320} />
+          <ResponsivePicture
+            src="/alusi-wordmark.png"
+            alt="Alusi"
+            width={800}
+            height={320}
+            widths={[160, 320, 640]}
+            sizes="116px"
+            avif={false}
+          />
         </a>
         <div className={styles.footerMeta}>
           <span>&copy; 2026</span>

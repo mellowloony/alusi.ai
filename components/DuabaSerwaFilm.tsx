@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import styles from "./DuabaSerwaProposal.module.css";
+import ResponsivePicture from "./ResponsivePicture";
 
 export default function DuabaSerwaFilm() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -72,17 +73,30 @@ export default function DuabaSerwaFilm() {
         ref={videoRef}
         loop
         playsInline
-        preload="auto"
-        poster="/duaba-serwa/opening-film-poster.webp"
+        preload="metadata"
         width={1920}
         height={1080}
         aria-label="Duaba Serwa film"
         onPlaying={() => setHasPlayed(true)}
         onError={() => setFailed(true)}
       >
+        <source media="(max-width: 767px)" src="/duaba-serwa/opening-film-mobile.mp4" type="video/mp4" />
         <source src="/duaba-serwa/opening-film.mp4" type="video/mp4" onError={() => setFailed(true)} />
       </video>
-      {!hasPlayed && <img className={styles.filmPoster} src="/duaba-serwa/opening-film-poster.webp" alt="" width={1920} height={1080} fetchPriority="high" />}
+      {!hasPlayed && (
+        <ResponsivePicture
+          className={styles.filmPoster}
+          src="/duaba-serwa/opening-film-poster.webp"
+          alt=""
+          width={1920}
+          height={1080}
+          widths={[640, 960, 1440]}
+          sizes="(max-width: 900px) calc(100vw - 40px), min(50vw, 752px)"
+          loading="eager"
+          fetchPriority="high"
+          ariaHidden
+        />
+      )}
       {failed && <p className={styles.filmError} role="status">The film couldn’t load. <a href="/duaba-serwa/opening-film.mp4">Open the video</a>.</p>}
       <noscript><p className={styles.filmError}><a href="/duaba-serwa/opening-film.mp4">Watch the film</a></p></noscript>
     </div>

@@ -9,12 +9,12 @@ export const metadata: Metadata = {
   title: "Ùwà — The Technology Layer for Creator Partnerships",
   description,
   alternates: {
-    canonical: "https://alusiai.com/uwa/",
+    canonical: "https://alusiai.com/uwa",
   },
   openGraph: {
     title: "Ùwà — The Technology Layer for Creator Partnerships",
     description,
-    url: "https://alusiai.com/uwa/",
+    url: "https://alusiai.com/uwa",
     siteName: "Alusi",
     type: "website",
   },

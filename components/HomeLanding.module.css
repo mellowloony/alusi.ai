@@ -220,6 +220,8 @@
 .section,
 .contact {
   scroll-margin-top: 5.25rem;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 56rem;
 }
 
 .section {
@@ -291,8 +293,8 @@
   background: #0f0f0f;
 }
 
-.solutionVisual > a > img:first-child,
-.strategyVisual > a > img:first-child {
+.solutionVisual > a > picture:first-child > img,
+.strategyVisual > a > picture:first-child > img {
   position: absolute;
   inset: 0;
   display: block;
@@ -376,6 +378,7 @@
 .workSection {
   display: flex;
   flex-direction: column;
+  contain-intrinsic-size: auto 140rem;
 }
 
 .workSection .sectionLead {
@@ -644,8 +647,8 @@
     border-color: rgba(237, 230, 218, 0.92);
   }
 
-  .solutionVisual > a:hover > img:first-child,
-  .strategyVisual > a:hover > img:first-child {
+  .solutionVisual > a:hover > picture:first-child > img,
+  .strategyVisual > a:hover > picture:first-child > img {
     transform: scale(1.025);
   }
 }

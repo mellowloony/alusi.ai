@@ -68,13 +68,6 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="font-body bg-ground text-ivory antialiased">
-        {/* Marks the document as JS-capable before paint, so reveal
-            animations never hide content when scripts are unavailable */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: "document.documentElement.dataset.js='1'",
-          }}
-        />
         {children}
       </body>
     </html>
