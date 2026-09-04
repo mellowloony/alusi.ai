@@ -1,5 +1,5 @@
 Scope and mode
-- Existing-world refinement of app/duaba-serwa/page.tsx with exactly five sections.
+- Existing-world refinement of app/duaba-serwa/page.tsx with exactly six sections.
 - Persuade mode: a private client proposal for Duaba Serwa's founder and senior brand/marketing decision-makers.
 - PRODUCT.md and DESIGN.md remain the global authorities. This route preserves their incumbent world and does not change global tokens.
 
@@ -11,6 +11,7 @@ Composition and content
 5. Media Buying: use a text-only section because no dedicated visual is supplied. Place `MEDIA BUYING` on the left and these supplied paragraphs on the right:
    “The best product in the world means little if the world never sees it.”
    “Media buying becomes a key growth lever — putting Duaba Serwa in front of people who may never have discovered the brand organically, and turning strong creative into measurable reach, demand, and conversion.”
+6. 90-Day Scaling Roadmap: keep this as the final section. Use a title-left/intro-right opening followed by three ruled month rows, numbered 01–03, with the supplied action lists. Close with the supplied “Throughout all 90 days” statement in a final divided row.
 
 Layout and responsive rules
 - Use the hero's image-left/content-right relationship as the page's visual reference without forcing every visual into the same aspect ratio.
@@ -26,4 +27,4 @@ Film behavior and provenance
 - Preserve the poster, load-error link, noscript fallback, descriptive image alternatives, lazy loading, and provenance sidecars.
 
 Completion evidence
-- Desktop, tablet, and mobile checks confirmed five sections, the intended mixed-aspect layouts, five working disclosures, automatic playback, audible playback when permitted, no controls, no navigation, loaded imagery, no horizontal overflow, and no page errors.
+- Desktop, tablet, and mobile checks confirmed six sections, the intended mixed-aspect layouts, five working disclosures, automatic playback, audible playback when permitted, no controls, no navigation, loaded imagery, no horizontal overflow, and no page errors.

@@ -25,6 +25,37 @@ const deliverables = [
   },
 ];
 
+const roadmap = [
+  {
+    title: "Month 1 — Build & Launch",
+    items: [
+      "Establish the creative direction",
+      "Develop campaign and social content",
+      "Begin consistent content rollout",
+      "Test multiple creative formats and messaging angles",
+    ],
+  },
+  {
+    title: "Month 2 — Optimize & Expand",
+    items: [
+      "Analyze content and audience performance",
+      "Refine creative based on data",
+      "Launch strategic brand and influencer partnerships",
+      "Implement email marketing and retention strategy",
+      "Expand into additional marketing channels",
+    ],
+  },
+  {
+    title: "Month 3 — Scale",
+    items: [
+      "Double down on the strongest-performing creative",
+      "Increase investment in proven channels",
+      "Scale partnerships, media, and retention initiatives",
+      "Build repeatable systems for sustained growth",
+    ],
+  },
+];
+
 export default function DuabaSerwaProposal() {
   return (
     <div className={home.page}>
@@ -119,6 +150,33 @@ export default function DuabaSerwaProposal() {
               <p>Media buying becomes a key growth lever — putting Duaba Serwa in front of people who may never have discovered the brand organically, and turning strong creative into measurable reach, demand, and conversion.</p>
             </div>
           </div>
+        </section>
+
+        <section className={styles.roadmapSection} aria-labelledby="roadmap-title">
+          <div className={styles.sectionLabel}>06 / ROADMAP</div>
+          <div className={styles.mediaGrid}>
+            <h2 id="roadmap-title">90-DAY SCALING ROADMAP</h2>
+            <div className={styles.sectionCopy}>
+              <p>A structured growth plan designed to build, test, optimize, and scale.</p>
+            </div>
+          </div>
+          <ol className={styles.roadmapMonths}>
+            {roadmap.map((month, index) => (
+              <li className={styles.roadmapMonth} key={month.title}>
+                <div className={styles.monthHeading}>
+                  <span aria-hidden="true">0{index + 1}</span>
+                  <h3>{month.title}</h3>
+                </div>
+                <ul>
+                  {month.items.map((item) => <li key={item}>{item}</li>)}
+                </ul>
+              </li>
+            ))}
+          </ol>
+          <p className={styles.roadmapThroughout}>
+            <strong>Throughout all 90 days:</strong>
+            <span>continuous testing, iteration, and optimization to identify what the market responds to and scale what works.</span>
+          </p>
         </section>
       </main>
     </div>

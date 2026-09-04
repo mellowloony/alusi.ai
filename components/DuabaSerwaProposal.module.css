@@ -27,7 +27,7 @@
 .filmError { position: absolute; inset: auto 0 0; padding: 1rem; background: #000; color: #ede6da; font-size: 0.85rem; }
 .filmError a { text-decoration: underline; text-underline-offset: 0.2em; }
 
-.splitSection, .mediaSection {
+.splitSection, .mediaSection, .roadmapSection {
   padding: clamp(5rem, 8vw, 8rem) var(--page-pad);
   border-top: 1px solid var(--line);
 }
@@ -60,7 +60,7 @@
   justify-self: end;
   padding-inline: clamp(1.75rem, 2.8vw, 3rem);
 }
-.sectionStatement h2, .mediaSection h2 {
+.sectionStatement h2, .mediaSection h2, .roadmapSection h2 {
   font-family: var(--font-display), Georgia, serif;
   font-size: clamp(2.5rem, 4.2vw, 4.5rem);
   font-weight: 400;
@@ -107,6 +107,50 @@
 }
 .mediaGrid h2 { max-width: 12ch; }
 .mediaGrid .sectionCopy { max-width: 40rem; margin-top: 0.25rem; }
+.roadmapMonths { margin: clamp(4rem, 7vw, 7rem) 0 0; padding: 0; list-style: none; }
+.roadmapMonth {
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(18rem, 6fr);
+  gap: clamp(3rem, 8vw, 8rem);
+  padding: clamp(2rem, 3.5vw, 3.25rem) 0;
+  border-top: 1px solid var(--line);
+}
+.monthHeading { display: grid; grid-template-columns: 2.5rem 1fr; gap: 1rem; align-items: baseline; }
+.monthHeading > span {
+  color: var(--quiet);
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.58rem;
+  letter-spacing: 0.14em;
+}
+.monthHeading h3 {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(1.65rem, 2.5vw, 2.5rem);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+}
+.roadmapMonth > ul { display: grid; gap: 0.75rem; margin: 0; padding: 0; list-style: none; }
+.roadmapMonth > ul li {
+  position: relative;
+  padding-left: 1.35rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+.roadmapMonth > ul li::before { position: absolute; top: 0; left: 0; color: var(--quiet); content: "→"; }
+.roadmapThroughout {
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(18rem, 6fr);
+  gap: clamp(3rem, 8vw, 8rem);
+  margin: 0;
+  padding: clamp(2rem, 3.5vw, 3.25rem) 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+.roadmapThroughout strong { color: var(--ivory); font-weight: 600; }
+.roadmapThroughout span { color: var(--muted); }
 
 @media (min-width: 768px) and (max-width: 1080px) {
   .heroStatement { padding-inline: 0; }
@@ -124,8 +168,9 @@
   .creativeSection .sectionStatement { margin-top: 2.5rem; }
   .mediaGrid { grid-template-columns: 1fr; gap: 2rem; }
   .mediaGrid .sectionCopy { margin-top: 0; }
+  .roadmapMonth, .roadmapThroughout { grid-template-columns: 1fr; gap: 1.5rem; }
 }
 @media (max-width: 767px) {
-  .sectionStatement h2, .mediaSection h2 { font-size: clamp(2.4rem, 9vw, 3.5rem); }
+  .sectionStatement h2, .mediaSection h2, .roadmapSection h2 { font-size: clamp(2.4rem, 9vw, 3.5rem); }
   .pillars { margin-top: 1.5rem; font-size: 0.7rem; }
 }
