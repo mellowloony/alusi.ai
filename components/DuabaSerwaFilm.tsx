@@ -18,12 +18,16 @@ export default function DuabaSerwaFilm() {
       if (!disposed && error.name !== "NotAllowedError" && error.name !== "AbortError") setFailed(true);
     };
     const removeSoundListeners = () => {
-      window.removeEventListener("pointerup", enableSound);
-      window.removeEventListener("keydown", enableSound);
+      window.removeEventListener("pointerdown", enableSound, true);
+      window.removeEventListener("keydown", enableSound, true);
     };
     const playWithSound = () => {
+      video.defaultMuted = false;
       video.muted = false;
-      video.play().then(removeSoundListeners).catch((error: DOMException) => {
+      video.volume = 1;
+      video.play().then(() => {
+        if (!video.muted) removeSoundListeners();
+      }).catch((error: DOMException) => {
         if (disposed) return;
         if (error.name === "NotAllowedError") {
           // Browsers can block audible autoplay. Keep the film moving and
@@ -40,8 +44,10 @@ export default function DuabaSerwaFilm() {
     }
 
     if (reduceMotion) return;
-    window.addEventListener("pointerup", enableSound);
-    window.addEventListener("keydown", enableSound);
+    // Capture the earliest permitted interaction so mobile and desktop
+    // browsers can lift their audible-autoplay restriction immediately.
+    window.addEventListener("pointerdown", enableSound, true);
+    window.addEventListener("keydown", enableSound, true);
 
     if (!("IntersectionObserver" in window)) {
       playWithSound();

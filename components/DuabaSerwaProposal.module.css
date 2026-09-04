@@ -1,4 +1,4 @@
-/* Three quiet sections inside the existing Alusi system. The hero uses the
+/* Four quiet sections inside the existing Alusi system. The hero uses the
    homepage's actual layout classes; only navigation is omitted. */
 .header {
   position: absolute;
@@ -27,7 +27,7 @@
 .filmError { position: absolute; inset: auto 0 0; padding: 1rem; background: #000; color: #ede6da; font-size: 0.85rem; }
 .filmError a { text-decoration: underline; text-underline-offset: 0.2em; }
 
-.positioning, .creative {
+.positioning, .strategySection {
   padding: clamp(5rem, 8vw, 8rem) var(--page-pad);
   border-top: 1px solid var(--line);
 }
@@ -39,7 +39,7 @@
 }
 .portrait { width: min(100%, 31rem); margin: 0; }
 .portrait img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 30%; border-radius: 12px; }
-.positioning h2, .creative h2 {
+.positioning h2, .strategySection h2 {
   font-family: var(--font-display), Georgia, serif;
   font-size: clamp(2.5rem, 4.2vw, 4.5rem);
   font-weight: 400;
@@ -48,13 +48,54 @@
   text-wrap: balance;
 }
 .positioningCopy > p { margin-top: 2rem; color: var(--muted); font-size: 1rem; line-height: 1.75; }
-.deliverables { display: grid; gap: 1rem; margin: 2rem 0 0; padding: 0; list-style: none; }
-.deliverables li { display: flex; align-items: baseline; gap: 0.85rem; color: var(--ivory); font-size: 0.95rem; line-height: 1.6; }
-.deliverables svg { width: 1rem; height: 1rem; flex: none; align-self: start; margin-top: 0.25rem; stroke: currentColor; stroke-width: 1.25; }
-.creativeLead { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 4fr); gap: clamp(3rem, 7vw, 7rem); align-items: end; }
-.creativeLead > p { max-width: 45ch; color: var(--muted); font-size: 1rem; line-height: 1.75; }
-.imagePair { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1.25rem, 3vw, 3rem); margin-top: 3rem; }
-.imagePair img { display: block; width: 100%; height: auto; aspect-ratio: 5 / 4; object-fit: cover; object-position: center 38%; border-radius: 12px; }
+.deliverables { margin-top: 2.25rem; border-bottom: 1px solid var(--line); }
+.deliverables details { border-top: 1px solid var(--line); }
+.deliverables summary {
+  display: flex;
+  min-height: 3.75rem;
+  cursor: pointer;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  color: var(--ivory);
+  font-size: 0.9rem;
+  line-height: 1.45;
+  list-style: none;
+}
+.deliverables summary::-webkit-details-marker { display: none; }
+.deliverables summary:focus-visible { outline: 1px solid var(--ivory); outline-offset: 4px; }
+.deliverables summary svg { width: 1rem; height: 1rem; flex: none; stroke: currentColor; stroke-width: 1.25; transition: transform 220ms ease; }
+.deliverables details[open] summary svg { transform: rotate(180deg); }
+.deliverables details > p { max-width: 48ch; padding: 0 2.5rem 1.5rem 0; color: var(--muted); font-size: 0.88rem; line-height: 1.7; }
+
+.sectionLabel {
+  margin-bottom: clamp(2.5rem, 5vw, 5rem);
+  color: var(--quiet);
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.58rem;
+  letter-spacing: 0.16em;
+}
+.archetypeGrid, .mediaGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 6fr) minmax(18rem, 4fr);
+  gap: clamp(3rem, 8vw, 8rem);
+}
+.strategyLead > p {
+  margin-bottom: 1.5rem;
+  color: var(--quiet);
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+}
+.strategyLead h2 { max-width: 12ch; }
+.strategyCopy { max-width: 40rem; padding-top: 0.25rem; }
+.strategyCopy p { color: var(--muted); font-size: 1rem; line-height: 1.8; }
+.strategyCopy p + p { margin-top: 1.25rem; }
+.archetypeImage { margin: clamp(3rem, 6vw, 6rem) 0 0; overflow: hidden; border-radius: 12px; }
+.archetypeImage img { display: block; width: 100%; height: auto; max-height: 42rem; object-fit: cover; object-position: center 27%; }
+.mediaBuying { padding-bottom: clamp(7rem, 12vw, 12rem); }
+.mediaGrid { align-items: end; }
+.mediaGrid h2 { max-width: 16ch; font-size: clamp(3rem, 5.8vw, 6rem); }
+.mediaGrid .strategyCopy { padding-bottom: 0.45rem; }
 
 @media (min-width: 768px) and (max-width: 1080px) {
   .heroStatement { padding-inline: 0; }
@@ -69,9 +110,10 @@
 @media (max-width: 767px) {
   .positioning { grid-template-columns: 1fr; gap: 2.5rem; }
   .portrait { max-width: 28rem; }
-  .positioning h2, .creative h2 { font-size: clamp(2.4rem, 9vw, 3.5rem); }
-  .creativeLead { grid-template-columns: 1fr; gap: 1.5rem; }
-  .imagePair { gap: 1rem; margin-top: 2rem; }
-  .imagePair img { aspect-ratio: 3 / 4; }
+  .positioning h2, .strategySection h2 { font-size: clamp(2.4rem, 9vw, 3.5rem); }
+  .archetypeGrid, .mediaGrid { grid-template-columns: 1fr; gap: 2rem; }
+  .strategyLead h2, .mediaGrid h2 { max-width: none; }
+  .archetypeImage { margin-top: 3rem; }
+  .archetypeImage img { aspect-ratio: 4 / 5; }
   .pillars { margin-top: 1.5rem; font-size: 0.7rem; }
 }

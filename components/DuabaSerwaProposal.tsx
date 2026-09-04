@@ -2,6 +2,29 @@ import DuabaSerwaFilm from "./DuabaSerwaFilm";
 import home from "./HomeLanding.module.css";
 import styles from "./DuabaSerwaProposal.module.css";
 
+const deliverables = [
+  {
+    title: "Visual Identity + Aesthetic Direction",
+    description: "Define the brand’s visual world, codes, and creative language.",
+  },
+  {
+    title: "Art Direction Playbook",
+    description: "Create clear guidelines for how the brand should consistently look and feel.",
+  },
+  {
+    title: "Campaign Concepts + Visual Storytelling",
+    description: "Develop campaign ideas rooted in strong narratives and brand storytelling.",
+  },
+  {
+    title: "Shoot + Content Direction",
+    description: "Direct the creative approach for shoots, social content, and campaign assets.",
+  },
+  {
+    title: "Ongoing Creative Oversight",
+    description: "Review and guide creative output to maintain consistency and quality.",
+  },
+];
+
 export default function DuabaSerwaProposal() {
   return (
     <div className={home.page}>
@@ -43,31 +66,44 @@ export default function DuabaSerwaProposal() {
           <div className={styles.positioningCopy}>
             <h2 id="direction-title">CREATIVE DIRECTION</h2>
             <p>We will define and oversee how Duaba Serwa looks, feels, and expresses itself creatively across every brand touchpoint.</p>
-            <ul className={styles.deliverables}>
-              {[
-                "Visual identity + aesthetic direction",
-                "Art direction playbook",
-                "Campaign concepts + visual storytelling",
-                "Shoot + content direction",
-                "Ongoing creative oversight",
-              ].map((item) => (
-                <li key={item}>
-                  <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M3 9h12m-5-5 5 5-5 5" /></svg>
-                  <span>{item}</span>
-                </li>
+            <div className={styles.deliverables}>
+              {deliverables.map((item) => (
+                <details key={item.title}>
+                  <summary>
+                    <span>{item.title}</span>
+                    <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4 7l5 5 5-5" /></svg>
+                  </summary>
+                  <p>{item.description}</p>
+                </details>
               ))}
-            </ul>
+            </div>
           </div>
         </section>
 
-        <section className={styles.creative} aria-labelledby="creative-title">
-          <div className={styles.creativeLead}>
-            <h2 id="creative-title">The house in motion.</h2>
-            <p>Show the fold, the silhouette and the making. Let movement and detail carry the same recognisable house language across every image.</p>
+        <section className={`${styles.strategySection} ${styles.archetype}`} aria-labelledby="archetype-title">
+          <div className={styles.sectionLabel}>03 / ARCHETYPE</div>
+          <div className={styles.archetypeGrid}>
+            <div className={styles.strategyLead}>
+              <p>THE IDEAL PARTNERSHIP</p>
+              <h2 id="archetype-title">Expand the Duaba world through aligned influence.</h2>
+            </div>
+            <div className={styles.strategyCopy}>
+              <p>The right partnership does more than place Duaba Serwa in front of an audience. It brings the house into a world of aligned taste, cultural relevance, and credible influence.</p>
+              <p>We will identify collaborators whose point of view reflects the brand, then shape campaigns that feel like a natural extension of Duaba’s visual language. New audiences discover the house through people they already trust.</p>
+            </div>
           </div>
-          <div className={styles.imagePair}>
-            <img src="/duaba-serwa/color-fold.webp" alt="Duaba Serwa sculptural pleats in orange, blue and gold" width={2000} height={3000} loading="lazy" decoding="async" />
-            <img src="/duaba-serwa/gold-fold.webp" alt="Gold Duaba Serwa look with hand-folded triangular details and a sculptural shoulder" width={2000} height={3000} loading="lazy" decoding="async" />
+          <figure className={styles.archetypeImage}>
+            <img src="/duaba-serwa/color-fold.webp" alt="Duaba Serwa portrait with sculptural pleats in orange, blue and gold" width={2000} height={3000} loading="lazy" decoding="async" />
+          </figure>
+        </section>
+
+        <section className={`${styles.strategySection} ${styles.mediaBuying}`} aria-labelledby="media-title">
+          <div className={styles.sectionLabel}>04 / MEDIA BUYING</div>
+          <div className={styles.mediaGrid}>
+            <h2 id="media-title">Imagine having the best product in the world. You do the world a disservice if nobody knows about it.</h2>
+            <div className={styles.strategyCopy}>
+              <p>Media buying is one of our biggest growth levers. It ensures the right creative reaches the right audience with enough consistency to build recognition, generate demand, and turn attention into measurable growth.</p>
+            </div>
           </div>
         </section>
       </main>

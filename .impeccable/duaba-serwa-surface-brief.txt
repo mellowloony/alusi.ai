@@ -1,34 +1,26 @@
 Scope and mode
-- Existing-world refinement of app/duaba-serwa/page.tsx, simplified at the user's request to exactly three sections.
-- Persuade mode: a private client proposal for Duaba Serwa's founder and senior brand/marketing decision-makers. Communicate Alusi's positioning and creative direction clearly through concise supplied copy and real fashion media.
-- PRODUCT.md and DESIGN.md remain the product and global visual authorities. The shipped surface preserves their incumbent world; neither global document nor .impeccable/design.json needs an update for this refinement.
+- Existing-world refinement of app/duaba-serwa/page.tsx, kept concise at exactly four sections.
+- Persuade mode: a private client proposal for Duaba Serwa's founder and senior brand/marketing decision-makers.
+- PRODUCT.md and DESIGN.md remain the product and global visual authorities. This route preserves their incumbent world and does not change global tokens.
 
 Composition and content
-1. Hero: directly reuse HomeLanding.module.css for the desktop film-left/text-right composition, with a small Alusi home link above and a larger wordmark below the film. The title is “Duaba Serwa”. Preserve these exact user-supplied paragraphs:
-   “Duaba Serwa sits at the intersection of African luxury, feminine power, and artisanal craft.”
-   “Our task is to sharpen the brand position, define the audience archetype, and build a message the market can immediately recognize.”
-   The line “African Luxury | Noble Femininity | Sculptural Craft” has visibly bold pillars at weight 700.
-2. Creative direction: portrait left, supplied heading and description right. Preserve the heading “CREATIVE DIRECTION” and the paragraph “We will define and oversee how Duaba Serwa looks, feels, and expresses itself creatively across every brand touchpoint.” Follow with these five deliverables, each marked by an inline SVG arrow:
-   - Visual identity + aesthetic direction
-   - Art direction playbook
-   - Campaign concepts + visual storytelling
-   - Shoot + content direction
-   - Ongoing creative oversight
-3. Image-led close: “The house in motion.” followed by “Show the fold, the silhouette and the making. Let movement and detail carry the same recognisable house language across every image.” Two image plates use color-fold.webp and gold-fold.webp.
+1. Hero: reuse HomeLanding.module.css for the film-left/text-right composition. Keep the supplied Duaba Serwa positioning copy and the bold “African Luxury | Noble Femininity | Sculptural Craft” pillars.
+2. Creative Direction: portrait left and supplied overview right. Present five deliverables as native, keyboard-accessible disclosure rows. Each row opens to its supplied one-sentence description; no custom video or navigation controls are introduced.
+3. Archetype: explain how aligned partnerships and influencer campaigns expand the Duaba world through shared taste, cultural relevance, and trusted discovery. Pair the editorial copy with color-fold.webp.
+4. Media Buying: lead with “Imagine having the best product in the world. You do the world a disservice if nobody knows about it.” Explain media buying as a principal growth lever that builds recognition, demand, and measurable growth.
 
 Visual and responsive rules
-- Retain the homepage's cinematic black ground, warm ivory, Eczar statements, Space Grotesk reading copy, fine rules, approved Alusi wordmark and 12px media radii. Shared Rare Bronze, Two-Voice, Ruled Geometry and Purposeful Curve rules remain accurate; this surface introduces no new global tokens.
-- Keep exactly three simple sections with no navigation region, chapter index, appended footer or extra proposal interface. The small Alusi home link and skip-to-content link remain.
-- At 900px and below, stack the hero at full width with the title, copy and pillars aligned to the film's left edge. Let the hero fit its content without an artificial full-viewport height. At 767px and below, stack the portrait and copy, and retain two narrow image plates in the final section.
-- This is a direct refinement within the existing Alusi world. No concept roll, generated comp or replacement global direction applies.
+- Retain the homepage's black ground, warm ivory, Eczar statements, Space Grotesk reading copy, fine rules, approved Alusi wordmark, and 12px media radii.
+- Keep no navigation region, chapter index, appended footer, or extra proposal interface. The small Alusi home link and skip-to-content link remain.
+- Use thin ruled disclosure rows with a rotating chevron and restrained secondary copy. At 900px and below, stack the homepage hero at full width. At 767px and below, stack all split layouts and preserve comfortable reading measures.
+- The Archetype section is an editorial text-and-image spread. Media Buying is a quiet text-led close.
 
 Film behavior and provenance
-- Use the supplied /Users/mirabelle/Downloads/0903 (1).mp4, served as public/duaba-serwa/opening-film.mp4: full approximately 20-second film, 1920×1080 H.264/AAC, approximately 5.7MB, with original audio. The approximately 62KB poster is its frame at 00:04. No new imagery was generated for this simplification.
-- DuabaSerwaFilm.tsx attempts automatic playback with original audio while visible. If browser policy rejects audible autoplay, it retries muted; a subsequent pointerup or keydown while the film is visible attempts to enable audio. Browser-enforced limits on audible autoplay were explained to the user and are not a promise of sound before interaction.
-- Loop inline with preload="auto". Pause offscreen. Respect reduced-motion preferences by leaving the poster at rest. Render no play, pause, sound buttons or native video controls, as explicitly requested. The poster overlay disappears on the first playing event.
-- Keep the labelled video, load-error direct video link and noscript fallback. Preserve existing descriptive image alternatives, lazy loading and asset provenance sidecars under public/duaba-serwa.
-- Fashion photographs retain their recorded official Duaba Serwa origins. User-supplied positioning and service language are proposal content, not evidence of achieved results. Do not invent outcomes, testimonials, performance figures, audience data or agreed targets.
+- Use public/duaba-serwa/opening-film.mp4: the full approximately 20-second, 1920×1080 H.264/AAC film with original audio.
+- Attempt audible playback while visible. If browser policy rejects sound before interaction, continue the film muted and enable original audio at full volume on the first pointer or keyboard interaction while the film is visible.
+- Loop inline, preload automatically, pause offscreen, and respect reduced-motion preferences. Render no play, pause, sound buttons, or native controls.
+- Preserve the poster, load-error link, noscript fallback, descriptive image alternatives, lazy loading, and asset provenance sidecars.
 
 Completion evidence
-- The final production build and viewport checks passed in the implementation pass.
-- .impeccable/review/duaba-simple/review.md identified tablet hero alignment and pillar emphasis fixes. Its verdict.md records both resolved, verifies the subsequent exact section-two content and removal of video controls, and returns disposition: ship. That verdict covers the scored fixes and those scoped content/control changes; it is not a new whole-surface review.
+- Production build passed after the four-section refinement.
+- Desktop, tablet, and mobile checks confirmed four sections, five working disclosures, automatic playback, audible playback when permitted, no controls, no navigation, loaded imagery, no horizontal overflow, and no page errors.
