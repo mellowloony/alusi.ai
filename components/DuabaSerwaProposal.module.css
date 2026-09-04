@@ -27,13 +27,15 @@
 .filmError { position: absolute; inset: auto 0 0; padding: 1rem; background: #000; color: #ede6da; font-size: 0.85rem; }
 .filmError a { text-decoration: underline; text-underline-offset: 0.2em; }
 
+.splitSection, .mediaSection {
+  padding: clamp(5rem, 8vw, 8rem) var(--page-pad);
+  border-top: 1px solid var(--line);
+}
 .splitSection {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   column-gap: clamp(1.5rem, 3vw, 3rem);
   align-items: start;
-  padding: clamp(5rem, 8vw, 8rem) var(--page-pad);
-  border-top: 1px solid var(--line);
 }
 .sectionVisual {
   grid-column: 1 / 8;
@@ -46,8 +48,10 @@
   background: #0f0f0f;
 }
 .sectionVisual img { display: block; width: 100%; height: 100%; object-fit: cover; }
-.directionVisual img { object-position: center 29%; }
-.mediaVisual img { object-position: center 26%; }
+.creativeSection { align-items: center; }
+.creativeSection .creativeVisual { grid-column: 1 / 6; width: min(100%, 31rem); aspect-ratio: 4 / 5; }
+.creativeVisual img { object-position: center 30%; }
+.creativeSection .sectionStatement { grid-column: 7 / 13; }
 .sectionStatement {
   grid-column: 8 / 13;
   box-sizing: border-box;
@@ -56,7 +60,7 @@
   justify-self: end;
   padding-inline: clamp(1.75rem, 2.8vw, 3rem);
 }
-.sectionStatement h2 {
+.sectionStatement h2, .mediaSection h2 {
   font-family: var(--font-display), Georgia, serif;
   font-size: clamp(2.5rem, 4.2vw, 4.5rem);
   font-weight: 400;
@@ -94,7 +98,15 @@
 .sectionCopy { margin-top: 2rem; }
 .sectionCopy p { color: var(--muted); font-size: 1rem; line-height: 1.8; }
 .sectionCopy p + p { margin-top: 1.25rem; }
-.mediaBuying { padding-bottom: clamp(7rem, 12vw, 12rem); }
+.mediaSection { padding-bottom: clamp(7rem, 12vw, 12rem); }
+.mediaGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 6fr) minmax(18rem, 4fr);
+  gap: clamp(3rem, 8vw, 8rem);
+  align-items: start;
+}
+.mediaGrid h2 { max-width: 12ch; }
+.mediaGrid .sectionCopy { max-width: 40rem; margin-top: 0.25rem; }
 
 @media (min-width: 768px) and (max-width: 1080px) {
   .heroStatement { padding-inline: 0; }
@@ -108,8 +120,12 @@
   .splitSection { display: block; }
   .sectionVisual { width: 100%; aspect-ratio: 16 / 9; }
   .sectionStatement { max-width: none; margin-top: 1.75rem; padding-inline: 0; }
+  .creativeSection .creativeVisual { width: 100%; max-width: 28rem; aspect-ratio: 4 / 5; }
+  .creativeSection .sectionStatement { margin-top: 2.5rem; }
+  .mediaGrid { grid-template-columns: 1fr; gap: 2rem; }
+  .mediaGrid .sectionCopy { margin-top: 0; }
 }
 @media (max-width: 767px) {
-  .sectionStatement h2 { font-size: clamp(2.4rem, 9vw, 3.5rem); }
+  .sectionStatement h2, .mediaSection h2 { font-size: clamp(2.4rem, 9vw, 3.5rem); }
   .pillars { margin-top: 1.5rem; font-size: 0.7rem; }
 }

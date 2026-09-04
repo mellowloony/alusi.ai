@@ -5,18 +5,19 @@ Scope and mode
 
 Composition and content
 1. Hero: reuse HomeLanding.module.css for the film-left/text-right composition. Keep the supplied positioning copy and bold “African Luxury | Noble Femininity | Sculptural Craft” pillars.
-2. Creative Direction: follow the hero's split structure with the Duaba portrait left and the supplied overview plus five keyboard-accessible disclosure rows right.
-3. Archetypes: follow the same split structure with fashion-editorial-dusk.webp left and the supplied `ARCHETYPES` heading and partnership copy right.
-4. Case Study — Tapestry: follow the same split structure with tapestry-case-study.webp left and the supplied heading and paragraph right. Keep this section immediately before Media Buying.
-5. Media Buying: follow the same split structure with gold-fold.webp left and the supplied `MEDIA BUYING` heading and two supplied paragraphs right:
+2. Creative Direction: use a taller portrait treatment on the left and the supplied overview plus five keyboard-accessible disclosure rows on the right. The visual remains 4:5 rather than being forced into a landscape frame.
+3. Archetypes: use fashion-editorial-dusk.webp in its landscape frame on the left and the supplied `ARCHETYPES` heading and partnership copy on the right.
+4. Case Study — Tapestry: use tapestry-case-study.webp in its landscape frame on the left and the supplied heading and paragraph on the right. Keep this section immediately before Media Buying.
+5. Media Buying: use a text-only section because no dedicated visual is supplied. Place `MEDIA BUYING` on the left and these supplied paragraphs on the right:
    “The best product in the world means little if the world never sees it.”
    “Media buying becomes a key growth lever — putting Duaba Serwa in front of people who may never have discovered the brand organically, and turning strong creative into measurable reach, demand, and conversion.”
 
-Shared layout and responsive rules
-- The hero defines the page layout. Every subsequent section uses the same 12-column split: a 7-column, rounded 11:6 visual on the left and a padded 5-column statement on the right.
+Layout and responsive rules
+- Use the hero's image-left/content-right relationship as the page's visual reference without forcing every visual into the same aspect ratio.
+- Creative Direction uses a balanced portrait-and-copy grid. Archetypes and Tapestry use a 7-column landscape visual with a 5-column statement. Media Buying uses a title-left/copy-right text grid.
 - Retain the homepage's black ground, warm ivory, Eczar statements, Space Grotesk copy, fine rules, approved Alusi wordmark, and 12px media radii.
 - Keep no navigation region, chapter index, appended footer, or extra proposal interface. The small Alusi home link and skip-to-content link remain.
-- At 900px and below, stack every section in the same order as the hero: visual first, statement second, both full width.
+- At 900px and below, stack image-led sections with the visual first and statement second. Stack the Media Buying title above its copy. Preserve Creative Direction's taller visual.
 
 Film behavior and provenance
 - Use public/duaba-serwa/opening-film.mp4: the full approximately 20-second, 1920×1080 H.264/AAC film with original audio.
@@ -25,4 +26,4 @@ Film behavior and provenance
 - Preserve the poster, load-error link, noscript fallback, descriptive image alternatives, lazy loading, and provenance sidecars.
 
 Completion evidence
-- Desktop, tablet, and mobile checks confirmed five sections, consistent hero-derived split layouts, five working disclosures, automatic playback, audible playback when permitted, no controls, no navigation, loaded imagery, no horizontal overflow, and no page errors.
+- Desktop, tablet, and mobile checks confirmed five sections, the intended mixed-aspect layouts, five working disclosures, automatic playback, audible playback when permitted, no controls, no navigation, loaded imagery, no horizontal overflow, and no page errors.

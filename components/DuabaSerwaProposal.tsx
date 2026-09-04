@@ -59,8 +59,8 @@ export default function DuabaSerwaProposal() {
           </div>
         </section>
 
-        <section className={styles.splitSection} aria-labelledby="direction-title">
-          <figure className={`${styles.sectionVisual} ${styles.directionVisual}`}>
+        <section className={`${styles.splitSection} ${styles.creativeSection}`} aria-labelledby="direction-title">
+          <figure className={`${styles.sectionVisual} ${styles.creativeVisual}`}>
             <img src="/duaba-serwa/duaba-portrait.webp" alt="Duaba Serwa sculptural womenswear with pleated sleeves and triangular folded details" width={2000} height={3000} loading="lazy" decoding="async" />
           </figure>
           <div className={styles.sectionStatement}>
@@ -110,12 +110,9 @@ export default function DuabaSerwaProposal() {
           </div>
         </section>
 
-        <section className={`${styles.splitSection} ${styles.mediaBuying}`} aria-labelledby="media-title">
-          <figure className={`${styles.sectionVisual} ${styles.mediaVisual}`}>
-            <img src="/duaba-serwa/gold-fold.webp" alt="Duaba Serwa gold sculptural look with hand-folded details" width={2000} height={3000} loading="lazy" decoding="async" />
-          </figure>
-          <div className={styles.sectionStatement}>
-            <div className={styles.sectionLabel}>05 / MEDIA BUYING</div>
+        <section className={styles.mediaSection} aria-labelledby="media-title">
+          <div className={styles.sectionLabel}>05 / MEDIA BUYING</div>
+          <div className={styles.mediaGrid}>
             <h2 id="media-title">MEDIA BUYING</h2>
             <div className={styles.sectionCopy}>
               <p>The best product in the world means little if the world never sees it.</p>
