@@ -6,28 +6,28 @@ related_targets: ["components/DuabaSerwaProposal.tsx","components/DuabaSerwaProp
 ---
 
 Scope and mode
-- Existing-world refinement of app/duaba-serwa/page.tsx, kept concise at exactly four sections.
+- Existing-world refinement of app/duaba-serwa/page.tsx with exactly five sections.
 - Persuade mode: a private client proposal for Duaba Serwa's founder and senior brand/marketing decision-makers.
-- PRODUCT.md and DESIGN.md remain the product and global visual authorities. This route preserves their incumbent world and does not change global tokens.
+- PRODUCT.md and DESIGN.md remain the global authorities. This route preserves their incumbent world and does not change global tokens.
 
 Composition and content
-1. Hero: reuse HomeLanding.module.css for the film-left/text-right composition. Keep the supplied Duaba Serwa positioning copy and the bold “African Luxury | Noble Femininity | Sculptural Craft” pillars.
-2. Creative Direction: portrait left and supplied overview right. Present five deliverables as native, keyboard-accessible disclosure rows. Each row opens to its supplied one-sentence description; no custom video or navigation controls are introduced.
-3. Archetypes: use the supplied `ARCHETYPES` heading and two supplied paragraphs about founders, cultural figures, exceptional women, and perception-shaping partnerships. Pair the copy with the user-provided fashion-editorial-dusk.webp visual.
-4. Media Buying: lead with “Imagine having the best product in the world. You do the world a disservice if nobody knows about it.” Explain media buying as a principal growth lever that builds recognition, demand, and measurable growth.
+1. Hero: reuse HomeLanding.module.css for the film-left/text-right composition. Keep the supplied positioning copy and bold “African Luxury | Noble Femininity | Sculptural Craft” pillars.
+2. Creative Direction: use the shared editorial section structure. Present the supplied overview and five keyboard-accessible disclosure rows with their supplied one-sentence descriptions. Place the Duaba portrait below the text grid in a restrained landscape crop.
+3. Archetypes: use the shared editorial section structure with the supplied `ARCHETYPES` heading and two supplied paragraphs about founders, cultural figures, exceptional women, and perception-shaping partnerships. Preserve the user-provided fashion-editorial-dusk.webp landscape visual below the text grid.
+4. Case Study — Tapestry: place this section immediately before Media Buying. Use the supplied heading and paragraph exactly, followed by the user-provided artist-studio visual served as tapestry-case-study.webp.
+5. Media Buying: use the shared editorial section structure. Keep `MEDIA BUYING` as the section heading, the supplied best-product statement as the lead, and the growth-lever explanation below it.
 
-Visual and responsive rules
-- Retain the homepage's black ground, warm ivory, Eczar statements, Space Grotesk reading copy, fine rules, approved Alusi wordmark, and 12px media radii.
+Shared layout and responsive rules
+- All content sections after the hero use the same structure: small numbered label, left-hand title, right-hand copy, and a full-width visual below when one is supplied.
+- Retain the homepage's black ground, warm ivory, Eczar statements, Space Grotesk copy, fine rules, approved Alusi wordmark, and 12px media radii.
 - Keep no navigation region, chapter index, appended footer, or extra proposal interface. The small Alusi home link and skip-to-content link remain.
-- Use thin ruled disclosure rows with a rotating chevron and restrained secondary copy. At 900px and below, stack the homepage hero at full width. At 767px and below, stack all split layouts and preserve comfortable reading measures.
-- The Archetypes section is an editorial text-and-image spread that preserves the supplied landscape visual without cropping. Media Buying is a quiet text-led close.
+- At 900px and below, stack the homepage hero at full width. At 767px and below, stack every editorial grid into a single reading column while preserving the same label-title-copy-media order.
 
 Film behavior and provenance
 - Use public/duaba-serwa/opening-film.mp4: the full approximately 20-second, 1920×1080 H.264/AAC film with original audio.
-- Attempt audible playback while visible. If browser policy rejects sound before interaction, continue the film muted and enable original audio at full volume on the first pointer or keyboard interaction while the film is visible.
+- Attempt audible playback while visible. If browser policy rejects sound before interaction, continue muted and enable original audio at full volume on the first pointer or keyboard interaction while the film is visible.
 - Loop inline, preload automatically, pause offscreen, and respect reduced-motion preferences. Render no play, pause, sound buttons, or native controls.
-- Preserve the poster, load-error link, noscript fallback, descriptive image alternatives, lazy loading, and asset provenance sidecars.
+- Preserve the poster, load-error link, noscript fallback, descriptive image alternatives, lazy loading, and provenance sidecars.
 
 Completion evidence
-- Production build passed after the four-section refinement.
-- Desktop, tablet, and mobile checks confirmed four sections, five working disclosures, automatic playback, audible playback when permitted, no controls, no navigation, loaded imagery, no horizontal overflow, and no page errors.
+- Desktop, tablet, and mobile checks confirmed five sections, consistent editorial structure, five working disclosures, automatic playback, audible playback when permitted, no controls, no navigation, loaded imagery, no horizontal overflow, and no page errors.

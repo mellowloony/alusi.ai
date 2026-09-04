@@ -59,30 +59,35 @@ export default function DuabaSerwaProposal() {
           </div>
         </section>
 
-        <section className={styles.positioning} aria-labelledby="direction-title">
-          <figure className={styles.portrait}>
-            <img src="/duaba-serwa/duaba-portrait.webp" alt="Duaba Serwa sculptural womenswear with pleated sleeves and triangular folded details" width={2000} height={3000} loading="lazy" decoding="async" />
-          </figure>
-          <div className={styles.positioningCopy}>
-            <h2 id="direction-title">CREATIVE DIRECTION</h2>
-            <p>We will define and oversee how Duaba Serwa looks, feels, and expresses itself creatively across every brand touchpoint.</p>
-            <div className={styles.deliverables}>
-              {deliverables.map((item) => (
-                <details key={item.title}>
-                  <summary>
-                    <span>{item.title}</span>
-                    <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4 7l5 5 5-5" /></svg>
-                  </summary>
-                  <p>{item.description}</p>
-                </details>
-              ))}
+        <section className={styles.strategySection} aria-labelledby="direction-title">
+          <div className={styles.sectionLabel}>02 / CREATIVE DIRECTION</div>
+          <div className={styles.editorialGrid}>
+            <div className={styles.strategyLead}>
+              <h2 id="direction-title">CREATIVE DIRECTION</h2>
+            </div>
+            <div className={styles.strategyCopy}>
+              <p>We will define and oversee how Duaba Serwa looks, feels, and expresses itself creatively across every brand touchpoint.</p>
+              <div className={styles.deliverables}>
+                {deliverables.map((item) => (
+                  <details key={item.title}>
+                    <summary>
+                      <span>{item.title}</span>
+                      <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4 7l5 5 5-5" /></svg>
+                    </summary>
+                    <p>{item.description}</p>
+                  </details>
+                ))}
+              </div>
             </div>
           </div>
+          <figure className={`${styles.editorialImage} ${styles.directionImage}`}>
+            <img src="/duaba-serwa/duaba-portrait.webp" alt="Duaba Serwa sculptural womenswear with pleated sleeves and triangular folded details" width={2000} height={3000} loading="lazy" decoding="async" />
+          </figure>
         </section>
 
         <section className={styles.strategySection} aria-labelledby="archetype-title">
           <div className={styles.sectionLabel}>03 / PARTNERSHIPS</div>
-          <div className={styles.archetypeGrid}>
+          <div className={styles.editorialGrid}>
             <div className={styles.strategyLead}>
               <h2 id="archetype-title">ARCHETYPES</h2>
             </div>
@@ -91,16 +96,34 @@ export default function DuabaSerwaProposal() {
               <p>The right partnerships shape perception. By consistently placing Duaba Serwa around the right people, communities, and cultural moments, we expand the brand’s universe and build stronger associations around it.</p>
             </div>
           </div>
-          <figure className={styles.archetypeImage}>
+          <figure className={styles.editorialImage}>
             <img src="/duaba-serwa/fashion-editorial-dusk.webp" alt="Woman in a sculptural copper dress walking through a glass atrium at dusk" width={2112} height={1168} loading="lazy" decoding="async" />
           </figure>
         </section>
 
-        <section className={`${styles.strategySection} ${styles.mediaBuying}`} aria-labelledby="media-title">
-          <div className={styles.sectionLabel}>04 / MEDIA BUYING</div>
-          <div className={styles.mediaGrid}>
-            <h2 id="media-title">Imagine having the best product in the world. You do the world a disservice if nobody knows about it.</h2>
+        <section className={styles.strategySection} aria-labelledby="tapestry-title">
+          <div className={styles.sectionLabel}>04 / CASE STUDY</div>
+          <div className={styles.editorialGrid}>
+            <div className={styles.strategyLead}>
+              <h2 id="tapestry-title">CASE STUDY — TAPESTRY</h2>
+            </div>
             <div className={styles.strategyCopy}>
+              <p>Tapestry can become a platform for spotlighting women through their craft, stories, and influence. Rather than chasing celebrity, partnerships become a way to deepen the collection’s narrative — using each collaborator to expand Duaba Serwa’s world, lore, and cultural relevance.</p>
+            </div>
+          </div>
+          <figure className={styles.editorialImage}>
+            <img src="/duaba-serwa/tapestry-case-study.webp" alt="Woman in a sculptural copper dress seated in an artist’s studio surrounded by painted portraits" width={1677} height={938} loading="lazy" decoding="async" />
+          </figure>
+        </section>
+
+        <section className={`${styles.strategySection} ${styles.mediaBuying}`} aria-labelledby="media-title">
+          <div className={styles.sectionLabel}>05 / MEDIA BUYING</div>
+          <div className={styles.editorialGrid}>
+            <div className={styles.strategyLead}>
+              <h2 id="media-title">MEDIA BUYING</h2>
+            </div>
+            <div className={styles.strategyCopy}>
+              <p className={styles.mediaStatement}>Imagine having the best product in the world. You do the world a disservice if nobody knows about it.</p>
               <p>Media buying is one of our biggest growth levers. It ensures the right creative reaches the right audience with enough consistency to build recognition, generate demand, and turn attention into measurable growth.</p>
             </div>
           </div>
