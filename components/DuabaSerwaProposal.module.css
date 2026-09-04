@@ -27,11 +27,48 @@
 .filmError { position: absolute; inset: auto 0 0; padding: 1rem; background: #000; color: #ede6da; font-size: 0.85rem; }
 .filmError a { text-decoration: underline; text-underline-offset: 0.2em; }
 
-.splitSection, .mediaSection, .roadmapSection {
+.splitSection, .partnershipsSection, .mediaSection, .roadmapSection {
   padding: clamp(5rem, 8vw, 8rem) var(--page-pad);
   border-top: 1px solid var(--line);
   content-visibility: auto;
   contain-intrinsic-size: auto 52rem;
+}
+.partnershipsSection { contain-intrinsic-size: auto 104rem; }
+.partnershipsRow.splitSection {
+  padding: 0;
+  border-top: 0;
+  contain-intrinsic-size: none;
+  content-visibility: visible;
+}
+.partnershipDivider {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  margin: clamp(4rem, 7vw, 7rem) 0;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+  color: var(--quiet);
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.58rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.caseStudyRow { align-items: center; }
+.sectionCopy h3 {
+  margin-bottom: 1rem;
+  color: var(--ivory);
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.caseStudyTitle {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(2.5rem, 4.2vw, 4.5rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.035em;
 }
 .roadmapSection { contain-intrinsic-size: auto 70rem; }
 .splitSection {

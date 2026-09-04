@@ -142,53 +142,61 @@ export default function DuabaSerwaProposal() {
           </div>
         </section>
 
-        <section className={styles.splitSection} aria-labelledby="archetype-title">
-          <figure className={styles.sectionVisual}>
-            <ResponsivePicture
-              src="/duaba-serwa/fashion-editorial-dusk.webp"
-              alt="Woman in a sculptural copper dress walking through a glass atrium at dusk"
-              width={2112}
-              height={1168}
-              widths={[640, 960, 1440, 1920]}
-              sizes="(max-width: 900px) calc(100vw - 40px), min(50vw, 752px)"
-              loading="lazy"
-              fetchPriority="low"
-            />
-          </figure>
-          <div className={styles.sectionStatement}>
-            <div className={styles.sectionLabel}>03 / PARTNERSHIPS</div>
-            <h2 id="archetype-title">ARCHETYPES</h2>
-            <div className={styles.sectionCopy}>
-              <p>The people associated with Duaba Serwa should feel like natural extensions of the brand’s world. We will define the right archetypes - founders, cultural figures, and women doing exceptional things, whose identity, taste, and ambition reinforce what the brand represents.</p>
-              <p>The right partnerships shape perception. By consistently placing Duaba Serwa around the right people, communities, and cultural moments, we expand the brand’s universe and build stronger associations around it.</p>
+        <section className={styles.partnershipsSection} aria-labelledby="partnerships-title">
+          <div className={`${styles.splitSection} ${styles.partnershipsRow}`}>
+            <figure className={styles.sectionVisual}>
+              <ResponsivePicture
+                src="/duaba-serwa/fashion-editorial-dusk.webp"
+                alt="Woman in a sculptural copper dress walking through a glass atrium at dusk"
+                width={2112}
+                height={1168}
+                widths={[640, 960, 1440, 1920]}
+                sizes="(max-width: 900px) calc(100vw - 40px), min(50vw, 752px)"
+                loading="lazy"
+                fetchPriority="low"
+              />
+            </figure>
+            <div className={styles.sectionStatement}>
+              <div className={styles.sectionLabel}>03 / PARTNERSHIPS</div>
+              <h2 id="partnerships-title">PARTNERSHIPS</h2>
+              <div className={styles.sectionCopy}>
+                <h3>Archetypes</h3>
+                <p>The people associated with Duaba Serwa should feel like natural extensions of the brand’s world. We will define the right archetypes — founders, cultural figures, and women doing exceptional things — whose identity, taste, and ambition reinforce what the brand represents.</p>
+                <p>The right partnerships shape perception. By consistently placing Duaba Serwa around the right people, communities, and cultural moments, we expand the brand’s universe and build stronger associations around it.</p>
+              </div>
             </div>
           </div>
-        </section>
 
-        <section className={styles.splitSection} aria-labelledby="tapestry-title">
-          <figure className={styles.sectionVisual}>
-            <ResponsivePicture
-              src="/duaba-serwa/tapestry-case-study.webp"
-              alt="Woman in a sculptural copper dress seated in an artist’s studio surrounded by painted portraits"
-              width={1677}
-              height={938}
-              widths={[640, 960, 1440]}
-              sizes="(max-width: 900px) calc(100vw - 40px), min(50vw, 752px)"
-              loading="lazy"
-              fetchPriority="low"
-            />
-          </figure>
-          <div className={styles.sectionStatement}>
-            <div className={styles.sectionLabel}>04 / CASE STUDY</div>
-            <h2 id="tapestry-title">CASE STUDY — TAPESTRY</h2>
-            <div className={styles.sectionCopy}>
-              <p>Tapestry can become a platform for spotlighting women through their craft, stories, and influence. Rather than chasing celebrity, partnerships become a way to deepen the collection’s narrative — using each collaborator to expand Duaba Serwa’s world, lore, and cultural relevance.</p>
+          <div className={styles.partnershipDivider} aria-hidden="true">
+            <span>Partnership case study</span>
+            <span>01 / Tapestry</span>
+          </div>
+
+          <div className={`${styles.splitSection} ${styles.partnershipsRow} ${styles.caseStudyRow}`}>
+            <figure className={styles.sectionVisual}>
+              <ResponsivePicture
+                src="/duaba-serwa/tapestry-case-study.webp"
+                alt="Woman in a sculptural copper dress seated in an artist’s studio surrounded by painted portraits"
+                width={1677}
+                height={938}
+                widths={[640, 960, 1440]}
+                sizes="(max-width: 900px) calc(100vw - 40px), min(50vw, 752px)"
+                loading="lazy"
+                fetchPriority="low"
+              />
+            </figure>
+            <div className={styles.sectionStatement}>
+              <div className={styles.sectionLabel}>PARTNERSHIP CASE STUDY</div>
+              <h3 id="tapestry-title" className={styles.caseStudyTitle}>TAPESTRY</h3>
+              <div className={styles.sectionCopy}>
+                <p>Tapestry can become a platform for spotlighting women through their craft, stories, and influence. Rather than chasing celebrity, partnerships become a way to deepen the collection’s narrative — using each collaborator to expand Duaba Serwa’s world, lore, and cultural relevance.</p>
+              </div>
             </div>
           </div>
         </section>
 
         <section className={styles.mediaSection} aria-labelledby="media-title">
-          <div className={styles.sectionLabel}>05 / MEDIA BUYING</div>
+          <div className={styles.sectionLabel}>04 / MEDIA BUYING</div>
           <div className={styles.mediaGrid}>
             <h2 id="media-title">MEDIA BUYING</h2>
             <div className={styles.sectionCopy}>
@@ -199,7 +207,7 @@ export default function DuabaSerwaProposal() {
         </section>
 
         <section className={styles.roadmapSection} aria-labelledby="roadmap-title">
-          <div className={styles.sectionLabel}>06 / ROADMAP</div>
+          <div className={styles.sectionLabel}>05 / ROADMAP</div>
           <div className={styles.mediaGrid}>
             <h2 id="roadmap-title">90-DAY SCALING ROADMAP</h2>
             <div className={styles.sectionCopy}>

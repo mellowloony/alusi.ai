@@ -14,6 +14,8 @@ export default function DuabaSerwaFilm() {
     if (!video) return;
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     let disposed = false;
+    let isVisible = true;
+    let soundEnabled = !video.paused && !video.muted && video.volume > 0;
 
     const reportError = (error: DOMException) => {
       if (!disposed && error.name !== "NotAllowedError" && error.name !== "AbortError") setFailed(true);
@@ -22,41 +24,60 @@ export default function DuabaSerwaFilm() {
       window.removeEventListener("pointerdown", enableSound, true);
       window.removeEventListener("keydown", enableSound, true);
     };
-    const playWithSound = () => {
+    const playMuted = () => {
+      video.muted = true;
+      video.play().catch(reportError);
+    };
+    const tryInitialPlayback = () => {
       video.defaultMuted = false;
       video.muted = false;
       video.volume = 1;
       video.play().then(() => {
-        if (!video.muted) removeSoundListeners();
+        soundEnabled = !video.muted;
+        if (soundEnabled) removeSoundListeners();
       }).catch((error: DOMException) => {
         if (disposed) return;
         if (error.name === "NotAllowedError") {
-          // Browsers can block audible autoplay. Keep the film moving and
-          // enable its original audio on the first permitted user gesture.
-          video.muted = true;
-          video.play().catch(reportError);
+          playMuted();
         } else reportError(error);
       });
     };
     function enableSound() {
-      if (!video || reduceMotion || disposed) return;
-      const rect = video.getBoundingClientRect();
-      if (rect.bottom > 0 && rect.top < window.innerHeight) playWithSound();
+      if (!video || reduceMotion || disposed || !isVisible || soundEnabled) return;
+
+      // This runs synchronously inside the visitor's gesture. That matters on
+      // Safari and Chrome, which reject unmuting after the gesture has ended.
+      soundEnabled = true;
+      video.defaultMuted = false;
+      video.muted = false;
+      video.volume = 1;
+      video.play().then(removeSoundListeners).catch((error: DOMException) => {
+        soundEnabled = false;
+        if (error.name === "NotAllowedError") playMuted();
+        else reportError(error);
+      });
     }
 
-    if (reduceMotion) return;
+    if (reduceMotion) {
+      video.pause();
+      return;
+    }
     // Capture the earliest permitted interaction so mobile and desktop
     // browsers can lift their audible-autoplay restriction immediately.
     window.addEventListener("pointerdown", enableSound, true);
     window.addEventListener("keydown", enableSound, true);
 
     if (!("IntersectionObserver" in window)) {
-      playWithSound();
+      tryInitialPlayback();
       return () => { disposed = true; removeSoundListeners(); video.pause(); };
     }
     const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) playWithSound();
-      else video.pause();
+      isVisible = entry.isIntersecting;
+      if (isVisible) {
+        if (soundEnabled) video.play().catch(reportError);
+        else if (video.currentTime === 0 && video.paused) tryInitialPlayback();
+        else playMuted();
+      } else video.pause();
     }, { threshold: 0.15 });
     observer.observe(video);
     return () => {
@@ -71,6 +92,7 @@ export default function DuabaSerwaFilm() {
     <div className={styles.filmPlayer}>
       <video
         ref={videoRef}
+        autoPlay
         loop
         playsInline
         preload="metadata"
