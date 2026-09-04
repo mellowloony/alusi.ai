@@ -28,7 +28,7 @@ const deliverables = [
 
 const roadmap = [
   {
-    title: "Month 1 — Build & Launch",
+    title: "Month 1: Build & Launch",
     items: [
       "Establish the creative direction",
       "Develop campaign and social content",
@@ -37,7 +37,7 @@ const roadmap = [
     ],
   },
   {
-    title: "Month 2 — Optimize & Expand",
+    title: "Month 2: Optimize & Expand",
     items: [
       "Analyze content and audience performance",
       "Refine creative based on data",
@@ -47,7 +47,7 @@ const roadmap = [
     ],
   },
   {
-    title: "Month 3 — Scale",
+    title: "Month 3: Scale",
     items: [
       "Double down on the strongest-performing creative",
       "Increase investment in proven channels",
@@ -161,7 +161,7 @@ export default function DuabaSerwaProposal() {
               <h2 id="partnerships-title">PARTNERSHIPS</h2>
               <div className={styles.sectionCopy}>
                 <h3>Archetypes</h3>
-                <p>The people associated with Duaba Serwa should feel like natural extensions of the brand’s world. We will define the right archetypes — founders, cultural figures, and women doing exceptional things — whose identity, taste, and ambition reinforce what the brand represents.</p>
+                <p>The people associated with Duaba Serwa should feel like natural extensions of the brand’s world. We will define the right archetypes, founders, cultural figures, and women doing exceptional things, whose identity, taste, and ambition reinforce what the brand represents.</p>
                 <p>The right partnerships shape perception. By consistently placing Duaba Serwa around the right people, communities, and cultural moments, we expand the brand’s universe and build stronger associations around it.</p>
               </div>
             </div>
@@ -189,7 +189,7 @@ export default function DuabaSerwaProposal() {
               <div className={styles.sectionLabel}>PARTNERSHIP CASE STUDY</div>
               <h3 id="tapestry-title" className={styles.caseStudyTitle}>TAPESTRY</h3>
               <div className={styles.sectionCopy}>
-                <p>Tapestry can become a platform for spotlighting women through their craft, stories, and influence. Rather than chasing celebrity, partnerships become a way to deepen the collection’s narrative — using each collaborator to expand Duaba Serwa’s world, lore, and cultural relevance.</p>
+                <p>Tapestry offers a strong starting point for <strong>creative partnerships built around the brand’s world</strong>. By collaborating with women across different disciplines, drawing on their <strong>craft, stories, and influence</strong>, we deepen the collection’s narrative and expand Duaba Serwa’s wider <strong>world, lore, and cultural relevance</strong>.</p>
               </div>
             </div>
           </div>
@@ -201,7 +201,7 @@ export default function DuabaSerwaProposal() {
             <h2 id="media-title">MEDIA BUYING</h2>
             <div className={styles.sectionCopy}>
               <p>The best product in the world means little if the world never sees it.</p>
-              <p>Media buying becomes a key growth lever — putting Duaba Serwa in front of people who may never have discovered the brand organically, and turning strong creative into measurable reach, demand, and conversion.</p>
+              <p>Media buying becomes a key growth lever, putting Duaba Serwa in front of people who may never have discovered the brand organically, and turning strong creative into measurable reach, demand, and conversion.</p>
             </div>
           </div>
         </section>

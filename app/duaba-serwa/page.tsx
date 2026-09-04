@@ -6,7 +6,7 @@ const description =
   "A strategy, creative direction and integrated marketing proposal for Duaba Serwa, prepared by Alusi.";
 
 export const metadata: Metadata = {
-  title: "Duaba Serwa — Proposal by Alusi",
+  title: "Duaba Serwa | Proposal by Alusi",
   description,
   alternates: {
     canonical: "https://alusiai.com/duaba-serwa",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     follow: false,
   },
   openGraph: {
-    title: "Duaba Serwa — Proposal by Alusi",
+    title: "Duaba Serwa | Proposal by Alusi",
     description,
     url: "https://alusiai.com/duaba-serwa",
     siteName: "Alusi",

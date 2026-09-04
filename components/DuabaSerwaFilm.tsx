@@ -6,7 +6,9 @@ import ResponsivePicture from "./ResponsivePicture";
 
 export default function DuabaSerwaFilm() {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const activateSoundRef = useRef<() => void>(() => undefined);
   const [hasPlayed, setHasPlayed] = useState(false);
+  const [needsSoundGesture, setNeedsSoundGesture] = useState(false);
   const [failed, setFailed] = useState(false);
 
   useEffect(() => {
@@ -26,6 +28,7 @@ export default function DuabaSerwaFilm() {
     };
     const playMuted = () => {
       video.muted = true;
+      setNeedsSoundGesture(true);
       video.play().catch(reportError);
     };
     const tryInitialPlayback = () => {
@@ -34,6 +37,7 @@ export default function DuabaSerwaFilm() {
       video.volume = 1;
       video.play().then(() => {
         soundEnabled = !video.muted;
+        setNeedsSoundGesture(!soundEnabled);
         if (soundEnabled) removeSoundListeners();
       }).catch((error: DOMException) => {
         if (disposed) return;
@@ -51,12 +55,14 @@ export default function DuabaSerwaFilm() {
       video.defaultMuted = false;
       video.muted = false;
       video.volume = 1;
+      setNeedsSoundGesture(false);
       video.play().then(removeSoundListeners).catch((error: DOMException) => {
         soundEnabled = false;
         if (error.name === "NotAllowedError") playMuted();
         else reportError(error);
       });
     }
+    activateSoundRef.current = enableSound;
 
     if (reduceMotion) {
       video.pause();
@@ -82,6 +88,7 @@ export default function DuabaSerwaFilm() {
     observer.observe(video);
     return () => {
       disposed = true;
+      activateSoundRef.current = () => undefined;
       observer.disconnect();
       removeSoundListeners();
       video.pause();
@@ -89,7 +96,19 @@ export default function DuabaSerwaFilm() {
   }, []);
 
   return (
-    <div className={styles.filmPlayer}>
+    <div
+      className={styles.filmPlayer}
+      onClick={() => activateSoundRef.current()}
+      onKeyDown={(event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          activateSoundRef.current();
+        }
+      }}
+      role={needsSoundGesture ? "button" : undefined}
+      tabIndex={needsSoundGesture ? 0 : -1}
+      aria-label={needsSoundGesture ? "Play the Duaba Serwa film with sound" : undefined}
+    >
       <video
         ref={videoRef}
         autoPlay
@@ -119,6 +138,7 @@ export default function DuabaSerwaFilm() {
           ariaHidden
         />
       )}
+      {needsSoundGesture && <span className={styles.soundHint}>Tap film for sound</span>}
       {failed && <p className={styles.filmError} role="status">The film couldn’t load. <a href="/duaba-serwa/opening-film.mp4">Open the video</a>.</p>}
       <noscript><p className={styles.filmError}><a href="/duaba-serwa/opening-film.mp4">Watch the film</a></p></noscript>
     </div>
