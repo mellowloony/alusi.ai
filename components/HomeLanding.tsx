@@ -163,9 +163,13 @@ export default function HomeLanding() {
 
               <div className={`${styles.heroCopy} rise`} style={{ animationDelay: "150ms" }}>
                 <p>
-                  Alusi is a creative company for brands with something bigger to say.
-                  <br />
-                  We shape the idea, build the world, and take it to market.
+                  For brands with something bigger to say.
+                </p>
+                <p>
+                  Through <strong>strategy, storytelling, and marketing</strong>, we shape how people see your brand and why they choose it.
+                </p>
+                <p>
+                  We build brands people notice, understand, and want to be part of.
                 </p>
                 <div className={styles.heroActions}>
                   <a href="#contact" className={styles.textLink}>
