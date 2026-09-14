@@ -1,4 +1,4 @@
-type PublicTable = "visits" | "waitlist";
+type PublicTable = "project_briefs" | "visits" | "waitlist";
 
 export class PublicInsertError extends Error {
   code?: string;

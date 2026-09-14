@@ -508,13 +508,14 @@
 }
 
 .contactForm {
-  margin-top: 2.5rem;
+  margin-top: 1.75rem;
 }
 
 .contactFields {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.25rem;
+  column-gap: 1.25rem;
+  row-gap: 0.9rem;
 }
 
 .contactField {
@@ -530,9 +531,11 @@
   color: rgba(237, 230, 218, 0.72);
 }
 
-.contactField input {
+.contactField input,
+.contactField select,
+.contactField textarea {
   min-width: 0;
-  min-height: 3.25rem;
+  min-height: 2.85rem;
   border: 0;
   border-bottom: 1px solid rgba(237, 230, 218, 0.32);
   border-radius: 0;
@@ -544,8 +547,37 @@
   transition: border-color 220ms ease;
 }
 
-.contactField input:focus {
+.contactField select {
+  appearance: none;
+  cursor: pointer;
+  color-scheme: dark;
+}
+
+.contactField textarea {
+  min-height: 4.75rem;
+  padding-top: 0.75rem;
+  resize: vertical;
+  line-height: 1.55;
+}
+
+.contactField textarea::placeholder {
+  color: rgba(237, 230, 218, 0.42);
+}
+
+.contactField input:focus,
+.contactField select:focus,
+.contactField textarea:focus {
   border-color: var(--ivory);
+}
+
+.contactField em {
+  margin-inline-start: 0.45rem;
+  font-style: normal;
+  color: rgba(237, 230, 218, 0.42);
+}
+
+.contactBrief {
+  margin-top: 0.9rem;
 }
 
 .contactSubmit {
@@ -553,7 +585,7 @@
   min-height: 2.75rem;
   align-items: center;
   gap: 0.8rem;
-  margin-top: 1.75rem;
+  margin-top: 1.25rem;
   border: 1px solid rgba(237, 230, 218, 0.32);
   padding: 0.9rem 1.1rem;
   background: transparent;
@@ -565,6 +597,39 @@
   color: var(--ivory);
   cursor: pointer;
   transition: border-color 220ms ease, color 220ms ease;
+}
+
+.contactSubmit:disabled {
+  cursor: wait;
+  opacity: 0.55;
+}
+
+.contactStatus {
+  min-height: 1.5em;
+  margin-top: 1rem;
+  color: rgba(237, 230, 218, 0.72);
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.contactSuccess {
+  margin-top: 2.5rem;
+  padding-block: 1.5rem;
+  border-block: 1px solid rgba(237, 230, 218, 0.2);
+}
+
+.contactSuccess p {
+  margin: 0;
+  color: var(--ivory);
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  line-height: 1.1;
+}
+
+.contactSuccess span {
+  display: block;
+  margin-top: 0.75rem;
+  color: rgba(237, 230, 218, 0.58);
 }
 
 .contactAlternative {

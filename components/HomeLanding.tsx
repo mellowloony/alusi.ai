@@ -343,10 +343,10 @@ export default function HomeLanding() {
         <section id="contact" className={styles.contact} aria-labelledby="contact-title">
           <div className={styles.contactGrid}>
             <Reveal>
-              <h2 id="contact-title">Tell us where to reach you.</h2>
+              <h2 id="contact-title">Get in touch.</h2>
             </Reveal>
             <Reveal delay={80} className={styles.contactCopy}>
-              <p>Leave your name and email. We’ll be in touch.</p>
+              <p>Share the brief, the objective, or the beginning of an idea. We’ll take it from there.</p>
               <ContactForm />
               <p className={styles.contactAlternative}>
                 Or reach us directly at{" "}
